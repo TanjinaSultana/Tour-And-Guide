@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from '../Home-feature/Banner/Banner';
 
 const Home = () => {
     return (
         <div>
-            this home
+            <Banner></Banner>
         </div>
     );
 };

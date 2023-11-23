@@ -10,8 +10,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Footer = () => {
   return (
-    <footer style={{ background: 'linear-gradient(to top, #202122, #753e3e)', height:"50vh", marginTop:"50px",borderRadius:"4px" }}>
-      <Container maxWidth="xl">
+    <footer  style={{ background: 'linear-gradient(to top, #202122, #6a2f41)', height:"50vh",marginRight:"65px", marginLeft:"65px",marginTop:"50px",borderRadius:"4px" }}>
+      <Container  maxWidth="lg">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
           <img src='logo.png' style={{width:'150px', height:'70px', marginTop:"70px" }}></img>
