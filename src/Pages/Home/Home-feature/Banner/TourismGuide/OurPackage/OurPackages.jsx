@@ -14,7 +14,7 @@ const OurPackages = ({items}) => {
   const buttonStyle = {
     textDecoration: 'none', // Remove underline
   };
-const { image,type,title,price} = items
+const { image,type,title,price,_id} = items
     return (
         <div >
               <Card sx={{ maxWidth: 345 }}>
@@ -38,7 +38,7 @@ const { image,type,title,price} = items
         </IconButton>
         <Button size="small">${price}</Button>
       </CardActions>
-      <Link>
+      <Link to={`/${_id}`}>
       <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
 
       <Button variant="outlined" style={buttonStyle}  >

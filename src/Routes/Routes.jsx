@@ -5,6 +5,7 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/home/Home";
 import Login from "../Pages/authentication/login/Login";
 import Register from "../Pages/authentication/register/Register";
+import ViewDetails from "../Pages/Home/Home-feature/Banner/TourismGuide/viewdetails/ViewDetails";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -21,6 +22,10 @@ import Register from "../Pages/authentication/register/Register";
         {
           path: 'register',
           element: <Register></Register>
+        },
+        {
+          path: "/:_id",
+          element: <ViewDetails></ViewDetails>
         }
       ]
     },
