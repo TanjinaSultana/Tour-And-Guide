@@ -8,7 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const { createUser } = useContext(AuthContext);
+  const { createUser,updateUserProfile } = useContext(AuthContext);
 
   const onSubmit = data => {
     console.log(data);
@@ -18,6 +18,14 @@ const Register = () => {
       .then(res => {
         const logUser = res.user;
         console.log(logUser);
+        updateUserProfile(data.name,data.photo)
+        .then(()=>{
+            const userInfo ={
+            name: data.name,
+            email : data.email
+            }
+            console.log(userInfo);
+        })
         Swal.fire("Registration Sucessfully");
       })
   };

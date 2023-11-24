@@ -9,52 +9,55 @@ import { Typography } from '@mui/material';
 import OurPackage from '../OurPackage/OurPackage';
 
 const TourismGuide = () => {
-    const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
-    const TabPanel = (props) => {
-        const { children, value, index, ...other } = props;
-    
-        return (
-          <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`tabpanel-${index}`}
-            aria-labelledby={`tabpanel-${index}`}
-            {...other}
-          >
-            {value === index && (
-              <Box>
-                <Typography>{children}</Typography>
-              </Box>
-            )}
-          </div>
-        );
-      };
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const TabPanel = (props) => {
+    const { children, value, index, ...other } = props;
+
     return (
-        <div>
-             <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <Tabs value={value} onChange={handleChange} centered>
-        <Tab label="Overview" >
-            item 1
-        </Tab>
-        <Tab label="Our Packages" />
-        <Tab label="Meet Our Tour Guides" />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-          Content for Item One
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`tabpanel-${index}`}
+        aria-labelledby={`tabpanel-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="Overview" />
+          <Tab label="Our Packages" />
+          <Tab label="Meet Our Tour Guides" />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+        
+          <Typography>Item 1</Typography>
         </TabPanel>
         <TabPanel value={value} index={1}>
-       <OurPackage></OurPackage>
+        {/* <OurPackage></OurPackage> */}
+        <Typography><OurPackage></OurPackage></Typography>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Content for Item Three
+        
+          <Typography>Content for Item Three</Typography>
         </TabPanel>
-    </Box>
-        </div>
-    );
+      </Box>
+    </div>
+  );
 };
 
 export default TourismGuide;

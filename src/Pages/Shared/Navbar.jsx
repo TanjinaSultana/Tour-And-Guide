@@ -13,13 +13,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const {user,logOut} = useAuth();
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -35,12 +37,51 @@ const Navbar = () => {
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
+    const handleLogOut = () =>{
+      logOut()
+      .then(() =>{})
+      .catch(err=>console.log(err))
+    }
     const navOptions = <>
    <NavLink to="/">
-    <li style={{color:"#202122"}}><a>Home</a></li>
+    <li style={{color:"#202122"}}>Home</li>
     </NavLink> 
+   <NavLink to="/">
+    <li style={{color:"#202122"}}><a>Community</a></li>
+    </NavLink> 
+   <NavLink to="/">
+    <li style={{color:"#202122"}}><a>Blogs</a></li>
+    </NavLink> 
+   <NavLink to="/">
+    <li style={{color:"#202122"}}><a>About Us</a></li>
+    </NavLink> 
+   <NavLink to="/">
+    <li style={{color:"#202122"}}><a>Contact Us</a></li>
+    </NavLink> 
+    {/* {
+      user?
+      <NavLink >
+    <li style={{color:"#202122"}}><a><button>Logout</button></a></li>
+ 
+    </NavLink> :""
+    } */}
    
 </>
+    const userOptions = <div style={{width:"150px"}}>
+    <h4>{user?.displayName}</h4>
+    <h4 style={{marginTop:"-20px",marginBottom:"-2px",width:"100px"}}>{user?.email}</h4>
+   <NavLink to="/dashboard">
+    <li style={{color:"#202122"}}><a>DashBoard</a></li>
+    </NavLink> 
+   <NavLink to="/offer">
+    <li style={{color:"#202122"}}><a>Offer Anouncement</a></li>
+    </NavLink> 
+   <NavLink >
+    <li style={{color:"#202122"}}><a><button onClick={handleLogOut}>Logout</button></a></li>
+ 
+    </NavLink> 
+   
+</div>
     return (
         <div>
           <AppBar  position="absolute" sx={{backgroundColor:"transparent",position:'absolute',opacity:"60px",zIndex:"40px",boxShadow:"none"}}>
@@ -140,11 +181,12 @@ const Navbar = () => {
            </div>
           
           </Box>
-
+{
+  user ?
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src={user?.photoURL} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -163,13 +205,17 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+             
+                <MenuItem  onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{userOptions}</Typography>
                 </MenuItem>
-              ))}
+           
             </Menu>
-          </Box>
+          </Box> :<NavLink to="/login">
+    <li style={{color:"#202122"}}><button>Login</button></li>
+ 
+    </NavLink> 
+}
         </Toolbar>
       </Container>
     </AppBar>

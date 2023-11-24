@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,8 +8,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Link } from 'react-router-dom';
 
-const OurPackages = () => {
+const OurPackages = ({items}) => {
+  const buttonStyle = {
+    textDecoration: 'none', // Remove underline
+  };
+const { image,type,title,price} = items
     return (
         <div >
               <Card sx={{ maxWidth: 345 }}>
@@ -16,23 +22,30 @@ const OurPackages = () => {
         component="img"
         alt="green iguana"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={image}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+         {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+       {type}
         </Typography>
       </CardContent>
       <CardActions>
       <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <Button size="small">Learn More</Button>
+        <Button size="small">${price}</Button>
       </CardActions>
+      <Link>
+      <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
+
+      <Button variant="outlined" style={buttonStyle}  >
+       View Details
+      </Button>
+      </div>
+      </Link>
     </Card>
         </div>
     );
