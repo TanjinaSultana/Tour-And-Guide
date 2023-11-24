@@ -4,25 +4,32 @@ import usePackage from '../../../../../../hooks/usePackage';
 import { useParams } from 'react-router-dom';
 import ViewDetail from './ViewDetail';
 import TourPlan from './TourPlan';
+import TourGuides from '../TourGuide/TourGuides';
+import Booking from '../Booking/Booking';
 
 const ViewDetails = () => {
     const [tourPackage,setTourPackage] = useState([])
     const [packages] =usePackage();
     console.log(packages);
-    const {_id} = useParams();
+    const {id} = useParams();
     useEffect(() =>{
-        const remaining = packages?.find(item => item._id == _id);
+        const remaining = packages?.find(item => item._id == id);
         setTourPackage(remaining);
-    },[_id,packages])
+      
+    },[id,packages])
     console.log(tourPackage);
     
     return (
         <div>
-            <Gallery></Gallery>
+            {/* <Gallery></Gallery> */}
             <h1>Tour Section</h1>
             <ViewDetail tourPackages={tourPackage}></ViewDetail>
             <h1>Tour Plan</h1>
             <TourPlan></TourPlan>
+            <h1>Tour Guides</h1>
+            <TourGuides></TourGuides>
+            <h1>Booking</h1>
+            <Booking></Booking>
         </div>
     );
 };
