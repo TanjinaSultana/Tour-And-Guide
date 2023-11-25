@@ -23,6 +23,15 @@ const AllUser = () => {
             }
         })
     }
+    const handleMakeGuide = user =>{
+        axiosSecure.patch(`/user/tourGuide/${user?._id}`)
+        .then(res =>{
+            if(res.data.modifiedCount>0){
+                refetch()
+                Swal.fire(`${user?.name} is Tour Guide`)
+            }
+        })
+    }
     return (
         <div>
              {/* <TableContainer component={Paper}>
@@ -72,18 +81,17 @@ const AllUser = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{ user.role === 'admin' ? 'admin' : "user"
-                                    // <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield></button> 
-                                    }</td>
+                                <td>{user && (user.role === 'admin' ? 'admin' : user.role === 'tourGuide' ? 'tourGuide' : 'user')}
+</td>
                                    {
-                                    user?.role === 'admin' ?
+                                    user?.role === 'admin' || user.role === 'tourGuide' ?
                                     <>
                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Make Admin</button>
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Make Guide</button>
+                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Make Guide</button>
                                     </>:
                                     <>
                                      <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Make Admin</button>
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Make Guide</button>
+                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Make Guide</button>
                                     </>
                                    }
                              
