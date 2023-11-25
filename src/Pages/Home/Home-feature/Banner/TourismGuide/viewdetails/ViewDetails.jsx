@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Gallery from './Gallery';
+
 import usePackage from '../../../../../../hooks/usePackage';
 import { useParams } from 'react-router-dom';
 import ViewDetail from './ViewDetail';
@@ -14,6 +14,7 @@ const ViewDetails = () => {
     const {id} = useParams();
     useEffect(() =>{
         const remaining = packages?.find(item => item._id == id);
+        //setTourPackage(remaining);
         setTourPackage(remaining);
       
     },[id,packages])

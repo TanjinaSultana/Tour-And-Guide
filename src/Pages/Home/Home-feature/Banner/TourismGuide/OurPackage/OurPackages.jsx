@@ -59,7 +59,7 @@ const handleAdd = ()=>{
         </button>
         <Button size="small">${price}</Button>
       </CardActions>
-      <Link to={`/packages/${_id}`}>
+      <Link to={`/${_id}`}>
       <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
 
       <Button variant="outlined" style={buttonStyle}  >

@@ -7,6 +7,7 @@ import Login from "../Pages/authentication/login/Login";
 import Register from "../Pages/authentication/register/Register";
 import ViewDetails from "../Pages/Home/Home-feature/Banner/TourismGuide/viewdetails/ViewDetails";
 import GuideDetail from "../Pages/Home/Home-feature/Banner/TourismGuide/TourGuide/GuideDetail";
+import EachType from "../Pages/Home/Home-feature/Banner/TourType/EachType";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +26,12 @@ import GuideDetail from "../Pages/Home/Home-feature/Banner/TourismGuide/TourGuid
           element: <Register></Register>
         },
         {
-          path: "/packages/:id",
+          path: "/packages/:type",
+          element: <EachType></EachType>
+        
+        },
+        {
+          path: "/:id",
           element: <ViewDetails></ViewDetails>
         },
         {
