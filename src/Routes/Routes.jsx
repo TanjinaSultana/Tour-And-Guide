@@ -11,6 +11,7 @@ import EachType from "../Pages/Home/Home-feature/Banner/TourType/EachType";
 import Dashboard from "../Layout/Dashboard";
 import AdminHome from "../Pages/dashboard/admin/adminHome/AdminHome";
 import AllUser from "../Pages/dashboard/admin/alluser/AllUser";
+import AddItem from "../Pages/dashboard/admin/additems/AddItem";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -53,6 +54,10 @@ import AllUser from "../Pages/dashboard/admin/alluser/AllUser";
         {
           path:'alluser',
           element:<AllUser></AllUser>
+        },
+        {
+          path:'addItem',
+          element:<AddItem></AddItem>
         }
       ]
     }
