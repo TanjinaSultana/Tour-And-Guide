@@ -8,7 +8,7 @@ import TourGuides from '../TourGuide/TourGuides';
 import Booking from '../Booking/Booking';
 
 const ViewDetails = () => {
-    const [tourPackage,setTourPackage] = useState([])
+    const [tourPackage,setTourPackage] = useState("")
     const [packages] =usePackage();
     console.log(packages);
     const {id} = useParams();
@@ -30,7 +30,7 @@ const ViewDetails = () => {
             <h1>Tour Guides</h1>
             <TourGuides></TourGuides>
             <h1>Booking</h1>
-            <Booking></Booking>
+            <Booking tour={tourPackage}></Booking>
         </div>
     );
 };

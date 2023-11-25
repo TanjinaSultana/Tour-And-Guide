@@ -19,7 +19,7 @@ const OurPackages = ({items}) => {
   };
 const { image,type,title,price,_id} = items
 const {user}= useAuth()
-const axiosSecure = useAxiosSecure();
+const [axiosSecure] = useAxiosSecure();
 const handleAdd = ()=>{
   if(user && user?.email){
     const wishItem = {tourItemId: _id,title,image,price,email:user?.email}

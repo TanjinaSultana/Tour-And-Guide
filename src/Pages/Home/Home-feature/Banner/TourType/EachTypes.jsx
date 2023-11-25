@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 
 const EachTypes = ({ items}) => {
     const {user}= useAuth()
-    const axiosSecure = useAxiosSecure();
+    const [axiosSecure] = useAxiosSecure();
     // if (!typeItem) {
     //     return <div>Loading...</div>; // Or some loading indicator
     //   }
