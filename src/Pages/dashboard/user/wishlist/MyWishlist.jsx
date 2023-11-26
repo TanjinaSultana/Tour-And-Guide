@@ -15,6 +15,7 @@ const MyWishlist = () => {
     const [axiosSecure] = useAxiosSecure()
     console.log(wish);
     const handleDelete = (id) =>{
+        console.log(id);
         axiosSecure.delete(`/wish/${id}`)
         .then(res=>{
          refetch()
@@ -50,7 +51,7 @@ const MyWishlist = () => {
                                 <td>{user.price}</td>
                                   <td>
 
-                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user.tourItemId)} ><FaTrashAlt></FaTrashAlt></button>
+                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user._id)} ><FaTrashAlt></FaTrashAlt></button>
                                     <Link to={`/${user.tourItemId}`}>
                                         <Button variant="outlined" style={buttonStyle}  >
                                          View Details
