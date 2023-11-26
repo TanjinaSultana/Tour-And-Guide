@@ -12,6 +12,11 @@ import Dashboard from "../Layout/Dashboard";
 import AdminHome from "../Pages/dashboard/admin/adminHome/AdminHome";
 import AllUser from "../Pages/dashboard/admin/alluser/AllUser";
 import AddItem from "../Pages/dashboard/admin/additems/AddItem";
+import TourGuideHome from "../Pages/dashboard/tourguide/tour guide home/TourGuideHome";
+import AssignTour from "../Pages/dashboard/tourguide/AssignTour/AssignTour";
+import UserHome from "../Pages/dashboard/user/UserHome/UserHome";
+import MyBooking from "../Pages/dashboard/user/Booking/MyBooking";
+import MyWishlist from "../Pages/dashboard/user/wishlist/MyWishlist";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -47,6 +52,7 @@ import AddItem from "../Pages/dashboard/admin/additems/AddItem";
       path:'dashboard',
       element:<Dashboard></Dashboard>,
       children:[
+        //admin routes
         {
           path:'home',
           element:<AdminHome></AdminHome>
@@ -58,7 +64,30 @@ import AddItem from "../Pages/dashboard/admin/additems/AddItem";
         {
           path:'addItem',
           element:<AddItem></AddItem>
+        },
+        //tour guide routes
+        {
+          path:'guidehome',
+          element:<TourGuideHome></TourGuideHome>
+        },
+        {
+          path:'assigntour',
+          element:<AssignTour></AssignTour>
+        },
+        //user routes
+        {
+          path:'userhome',
+          element:<UserHome></UserHome>
+        },
+        {
+          path:'cart',
+          element:<MyBooking></MyBooking>
+        },
+        {
+          path:'wish',
+          element:<MyWishlist></MyWishlist>
         }
+
       ]
     }
   ]);

@@ -5,8 +5,12 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText, CssBaseline, AppBar
 import { FaHome, FaUsers } from 'react-icons/fa';
 import { MdTour } from 'react-icons/md';
 import Navbar from '../Pages/Shared/Navbar';
+import useAdmin from '../hooks/useAdmin'
+import useTourGuide from '../hooks/useTourGuide';
 
 const Dashboard = () => {
+  const [isAdmin] = useAdmin()
+  const [isTourGuide] = useTourGuide()
   return (
     <div style={{ display: 'flex' }}>
       <CssBaseline />
@@ -39,12 +43,15 @@ const Dashboard = () => {
         }}
       >
         <Toolbar />
+        {
+          isAdmin ? <>
+          
         <List>
           <ListItem button component={NavLink} to="/dashboard/home">
             <ListItemIcon>
               <FaHome />
             </ListItemIcon>
-            <ListItemText primary="Admin Home" />
+            <ListItemText primary="Admin Profile" />
           </ListItem>
 
           <ListItem button component={NavLink} to="/dashboard/addItem">
@@ -61,6 +68,50 @@ const Dashboard = () => {
             <ListItemText primary="All Users" />
           </ListItem>
         </List>
+          </>:(isTourGuide?
+          <> <List>
+          <ListItem button component={NavLink} to="/dashboard/guidehome">
+            <ListItemIcon>
+              <FaHome />
+            </ListItemIcon>
+            <ListItemText primary="Tour Guide Profile" />
+          </ListItem>
+
+          <ListItem button component={NavLink} to="/dashboard/assigntour">
+            <ListItemIcon>
+              <MdTour />
+            </ListItemIcon>
+            <ListItemText primary="My Assigned Tours" />
+          </ListItem>
+
+         
+        </List></>
+        :
+        <> <List>
+        <ListItem button component={NavLink} to="/dashboard/userhome">
+          <ListItemIcon>
+            <FaHome />
+          </ListItemIcon>
+          <ListItemText primary="Tourist Profile" />
+        </ListItem>
+
+        <ListItem button component={NavLink} to="/dashboard/cart">
+          <ListItemIcon>
+            <MdTour />
+          </ListItemIcon>
+          <ListItemText primary="My Booking" />
+        </ListItem>
+        <ListItem button component={NavLink} to="/dashboard/wish">
+          <ListItemIcon>
+            <MdTour />
+          </ListItemIcon>
+          <ListItemText primary="My Wishlist" />
+        </ListItem>
+
+       
+      </List></>
+          )
+        }
       </Drawer>
 
       {/* Main Content */}

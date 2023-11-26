@@ -15,29 +15,12 @@ const AddItem = () => {
     const [axiosSecure] = useAxiosSecure()
 
     const onSubmit = async(data) => {
-      //console.log(data);
-    
       const imageFile = {image: data.image[0]}
       const res = await axiosPublic.post(image_hosting_api, imageFile, {
           headers: {
               'content-type': 'multipart/form-data'
           }
       });
-      // const res1 = await axiosPublic.post(image_hosting_api,gallery1File,{
-      //     headers:{
-      //         'content-type': 'multipart/form-data'
-      //     }
-      // });
-      // const res2 = await axiosPublic.post(image_hosting_api,gallery2File,{
-      //     headers:{
-      //         'content-type': 'multipart/form-data'
-      //     }
-      // });
-      // const res3 = await axiosPublic.post(image_hosting_api,gallery3File,{
-      //     headers:{
-      //         'content-type': 'multipart/form-data'
-      //     }
-      // });
       if(res.data.success){
 
         const tourItem = {

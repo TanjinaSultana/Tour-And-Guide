@@ -22,7 +22,7 @@ const {user}= useAuth()
 const [axiosSecure] = useAxiosSecure();
 const handleAdd = ()=>{
   if(user && user?.email){
-    const wishItem = {tourItemId: _id,title,image,price,email:user?.email}
+    const wishItem = {tourItemId: _id,title,type,image,price,email:user?.email}
     axiosSecure.post("/wish",wishItem)
     .then(res=>{
       if(res.data.insertedId){
