@@ -3,12 +3,15 @@ import useCart from '../../../../hooks/useCart';
 
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 // import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 // import Swal from 'sweetalert2';
 
 const MyBooking = () => {
     const [cart,refetch]= useCart();
-    const [axiosSecure] = useAxiosSecure()
+    const [axiosSecure] = useAxiosSecure();
+    const total = cart.reduce((sum,item)=>item.prices + sum,0)
+    const total2 = parseFloat(total)
     const handleDelete = (id) =>{
        
         axiosSecure.delete(`/cart/${id}`)
@@ -22,6 +25,9 @@ const MyBooking = () => {
     
     return (
         <div>
+        <h3>
+    Total Price: ${total2}
+        </h3>
               <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -74,7 +80,13 @@ const MyBooking = () => {
                                     {
                                     user?.status === "accept"?
                                     <>
-                                     <button className="btn btn-ghost bg-orange-600  text-white" >Pay</button>
+                                      {/* {cart.length ? 
+                :
+                <button disabled className="btn btn-primary">Pay</button>
+            } */}
+            <Link to="/dashboard/payment">
+<button className="btn btn-primary">Pay</button>
+</Link>
                                      <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
                                     </>:(user?.status === "reject"?
                                     <>

@@ -17,6 +17,8 @@ import AssignTour from "../Pages/dashboard/tourguide/AssignTour/AssignTour";
 import UserHome from "../Pages/dashboard/user/UserHome/UserHome";
 import MyBooking from "../Pages/dashboard/user/Booking/MyBooking";
 import MyWishlist from "../Pages/dashboard/user/wishlist/MyWishlist";
+import Payment from "../Pages/dashboard/user/payment/Payment";
+import PaymentHistory from "../Pages/dashboard/user/payment/PaymentHistory";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -86,7 +88,15 @@ import MyWishlist from "../Pages/dashboard/user/wishlist/MyWishlist";
         {
           path:'wish',
           element:<MyWishlist></MyWishlist>
-        }
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
+        },
+        {
+          path: 'paymentHistory',
+          element: <PaymentHistory></PaymentHistory>
+        },
 
       ]
     }
