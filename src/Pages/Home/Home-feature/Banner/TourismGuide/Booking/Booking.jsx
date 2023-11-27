@@ -6,11 +6,12 @@ import useAuth from '../../../../../../hooks/useAuth';
 import useGuide from '../../../../../../hooks/useGuide';
  import useAxiosSecure from '../../../../../../hooks/useAxiosSecure';
  import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Booking = ({tour}) => {
   const {user}= useAuth();
   const [guide] =useGuide();
-  const{title,price,image} = tour;
+  const{title,price,image,_id} = tour;
   
   const [startDate, setStartDate] = useState(new Date());
   const [tourGuideName, setTourGuideName] = useState('');
@@ -25,12 +26,50 @@ const handleAdd = (e) => {
   const email = form.email.value
   console.log({startDate, tourGuideName, name, email, prices,images});
 
-  const cartItem ={startDate, tourGuideName, name, email, prices,images}
+  const cartItem ={tourItemId:_id, startDate, tourGuideName, name, email, prices,images}
   axiosSecure.post('/cart',cartItem)
         .then(res=>{
-          if(res.data.insertedId){
-            Swal.fire("data added")
-          }
+
+
+          Swal.fire({
+            title: "Are you sure?",
+            text: "Confirm Your Booking",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              if(res.data.insertedId){
+                // Swal.fire({
+                //   position: "top-end",
+                //   icon: "success",
+                //   title: "Confirm Your Booking",
+                //   message:<><Link to="/cart">My Booking Page</Link></>,
+                //   showConfirmButton: false,
+                //   timer: 2500
+                // });
+                
+                Swal.fire({
+                  title: "Confirmed Your Booking",
+                  html: '<a href="/dashboard/cart">My Booking Page</a>',
+                  icon: "success"
+                });
+              }
+            }
+          });
+          // if(res.data.insertedId){
+          //   // Swal.fire({
+          //   //   position: "top-end",
+          //   //   icon: "success",
+          //   //   title: "Confirm Your Booking",
+          //   //   message:<><Link to="/cart">My Booking Page</Link></>,
+          //   //   showConfirmButton: false,
+          //   //   timer: 2500
+          //   // });
+            
+          // }
 })
 }
 return(
@@ -86,11 +125,19 @@ return(
   <input
     id="prices"
     name="prices"
-    type="text"
+    type="number"
     defaultValue={price}
   />
 </div>
-<button type="submit">Submit</button>
+{
+  user?
+<button type="submit">Book Now</button>:<>
+<button type="submit" disabled>Book Now</button>
+<Link to="/login">
+<h5>{"Please Login"}</h5>
+</Link>
+</>
+}
 
 </form>
 

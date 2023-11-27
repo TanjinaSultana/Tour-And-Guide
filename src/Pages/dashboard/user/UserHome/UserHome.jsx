@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import { Avatar } from '@mui/material';
+import StoryForm from '../../../Home/Home-feature/StorySection/storyform/StoryForm';
 
 const UserHome = () => {
     const {user} = useAuth();
@@ -22,6 +23,7 @@ sx={{ width: 170, height: 170 }}
 </div>
 </div>
 </div>
+<StoryForm></StoryForm>
         </div>
     );
 };

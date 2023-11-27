@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 const MyBooking = () => {
     const [cart,refetch]= useCart();
     const [axiosSecure] = useAxiosSecure();
-    const total = cart.reduce((sum,item)=>item.prices + sum,0)
+    
+    const total = cart.reduce((sum,item)=>parseFloat(item.prices) + sum,0)
+    console.log(total);
     const total2 = parseFloat(total)
     const handleDelete = (id) =>{
        
@@ -48,7 +50,7 @@ const MyBooking = () => {
                         {
                             cart.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
-                                <td>{user.packageName}</td>
+                                <td>{user.name}</td>
                                 <td>{user.tourGuideName}</td>
                                 <td>{user.startDate}</td>
                                 <td>{user.prices}</td>

@@ -22,6 +22,9 @@ import PaymentHistory from "../Pages/dashboard/user/payment/PaymentHistory";
 import AllPackage from "../Pages/Home/Home-feature/Banner/TourismGuide/OurPackage/AllPackage";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import TourRoute from "./TourRoute";
+import AllStory from "../Pages/Home/Home-feature/StorySection/allStory/AllStory";
+import StoryDetails from "../Pages/Home/Home-feature/StorySection/StoryDetails/StoryDetails";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -40,6 +43,10 @@ import AdminRoute from "./AdminRoute";
           element: <Login></Login>
         },
         {
+          path: 'allStory',
+          element:<AllStory></AllStory>
+        },
+        {
           path: 'register',
           element: <Register></Register>
         },
@@ -55,6 +62,10 @@ import AdminRoute from "./AdminRoute";
         {
           path: "/guide/:id",
           element: <GuideDetail></GuideDetail>
+        },
+        {
+          path: "/story/:id",
+          element:  <StoryDetails></StoryDetails>
         }
       ]
     },{
@@ -91,11 +102,17 @@ import AdminRoute from "./AdminRoute";
         //tour guide routes
         {
           path:'guidehome',
-          element:<TourGuideHome></TourGuideHome>
+          element:<TourRoute>
+
+            <TourGuideHome></TourGuideHome>
+          </TourRoute>
         },
         {
           path:'assigntour',
-          element:<AssignTour></AssignTour>
+          element:<TourRoute>
+
+            <AssignTour></AssignTour>
+          </TourRoute>
         },
         //user routes
         {

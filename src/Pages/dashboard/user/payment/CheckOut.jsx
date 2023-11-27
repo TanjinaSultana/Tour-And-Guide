@@ -15,7 +15,9 @@ const stripe = useStripe();
 const elements = useElements();
 const [axiosSecure] = useAxiosSecure();
 const [cart,refetch]= useCart();
-const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+const totalPrice1 = cart.reduce((total, item) => total + parseFloat(item.prices), 0);
+const totalPrice = parseFloat(totalPrice1)
+console.log(totalPrice);
 
 const navigate = useNavigate();
 
@@ -85,7 +87,7 @@ const navigate = useNavigate();
                        transactionId: paymentIntent.id,
                        date: new Date(), // utc date convert. use moment js to 
                        cartIds: cart.map(item => item._id),
-                       menuItemIds: cart.map(item => item.menuItemId),
+                       tourItemId: cart.map(item => item.tourItemId),
                        status: 'pending'
                    }
                    const res = await axiosSecure.post('/payments', payment);
