@@ -21,7 +21,7 @@ const EachTypes = ({ items}) => {
     //     return <div>Loading...</div>; // Or some loading indicator
     //   }
     const { image,type,title,price,_id} =  items;
-    console.log(items);
+    
     const handleAdd = ()=>{
         if(user && user?.email){
             const wishItem = {tourItemId: _id,title,type,image,price,email:user?.email}

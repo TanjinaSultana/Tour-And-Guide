@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TourGuide = ({items}) => {
-    console.log(items);
+   
     const {name, image,email,contact,education,skills,workExperience,_id} = items
     return (
         <div>

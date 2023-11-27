@@ -6,11 +6,11 @@ import ViewDetail from './ViewDetail';
 import TourPlan from './TourPlan';
 import TourGuides from '../TourGuide/TourGuides';
 import Booking from '../Booking/Booking';
+import Gallery from './Gallery';
 
 const ViewDetails = () => {
     const [tourPackage,setTourPackage] = useState("")
     const [packages] =usePackage();
-    console.log(packages);
     const {id} = useParams();
     useEffect(() =>{
         const remaining = packages?.find(item => item._id == id);
@@ -18,12 +18,12 @@ const ViewDetails = () => {
         setTourPackage(remaining);
       
     },[id,packages])
-    console.log(tourPackage);
+    
     
     return (
         <div>
-            {/* <Gallery></Gallery> */}
-            <h1>Tour Section</h1>
+            <Gallery gallery={tourPackage} ></Gallery>
+            <h1 >Tour Section</h1>
             <ViewDetail tourPackages={tourPackage}></ViewDetail>
             <h1>Tour Plan</h1>
             <TourPlan></TourPlan>

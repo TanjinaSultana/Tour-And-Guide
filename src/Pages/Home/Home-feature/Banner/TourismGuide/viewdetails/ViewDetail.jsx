@@ -3,10 +3,9 @@ import React from 'react';
 import { Container, Grid, Typography, Button } from '@mui/material';
 
 const ViewDetail = ({tourPackages}) => {
-    console.log(tourPackages);
     const { image,type,title,price,_id,details} = tourPackages
     return (
-        <div>
+        <div style={{marginTop:"100px"}}>
                <Container>
       <Grid container spacing={2}>
         {/* Image Side */}

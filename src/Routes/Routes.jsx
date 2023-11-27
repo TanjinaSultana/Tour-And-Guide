@@ -19,6 +19,9 @@ import MyBooking from "../Pages/dashboard/user/Booking/MyBooking";
 import MyWishlist from "../Pages/dashboard/user/wishlist/MyWishlist";
 import Payment from "../Pages/dashboard/user/payment/Payment";
 import PaymentHistory from "../Pages/dashboard/user/payment/PaymentHistory";
+import AllPackage from "../Pages/Home/Home-feature/Banner/TourismGuide/OurPackage/AllPackage";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -27,6 +30,10 @@ import PaymentHistory from "../Pages/dashboard/user/payment/PaymentHistory";
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: 'allPackage',
+          element: <AllPackage></AllPackage>
         },
         {
           path: 'login',
@@ -52,20 +59,34 @@ import PaymentHistory from "../Pages/dashboard/user/payment/PaymentHistory";
       ]
     },{
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element:
+      <PrivateRoute>
+
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+      ,
       children:[
         //admin routes
         {
           path:'home',
-          element:<AdminHome></AdminHome>
+          element:<AdminRoute>
+
+            <AdminHome></AdminHome>
+          </AdminRoute>
         },
         {
           path:'alluser',
-          element:<AllUser></AllUser>
+          element:<AdminRoute>
+
+            <AllUser></AllUser>
+          </AdminRoute>
         },
         {
           path:'addItem',
-          element:<AddItem></AddItem>
+          element: <AdminRoute>
+
+            <AddItem></AddItem>
+          </AdminRoute>
         },
         //tour guide routes
         {

@@ -10,7 +10,7 @@ const EachType = () => {
   const [packages]= usePackage();
     const {type}= useParams();
    
-    console.log(type);
+    
     useEffect(()=>{
         const remaining = packages.filter(item => item.type === type);
         

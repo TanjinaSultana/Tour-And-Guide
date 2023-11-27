@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const TourType = () => {
     const [packages] =usePackage();
-    console.log(packages);
+ 
     return (
         <div>
 
