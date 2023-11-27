@@ -80,13 +80,13 @@ const MyBooking = () => {
                                     {
                                     user?.status === "accept"?
                                     <>
-                                      {/* {cart.length ? 
+                                      {cart.length ? 
+                <Link to="/dashboard/payment">
+    <button className="btn btn-primary">Pay</button>
+    </Link>
                 :
                 <button disabled className="btn btn-primary">Pay</button>
-            } */}
-            <Link to="/dashboard/payment">
-<button className="btn btn-primary">Pay</button>
-</Link>
+            }
                                      <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
                                     </>:(user?.status === "reject"?
                                     <>
