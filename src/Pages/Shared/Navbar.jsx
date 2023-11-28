@@ -43,9 +43,8 @@ const Navbar = () => {
       .catch(err=>console.log(err))
     }
     const navOptions = <>
-   <NavLink to="/"  style={{paddingLeft:"40px",paddingRight:"40px",paddingTop:"10px",
-   paddingBottom:"10px",backgroundColor:"#6a2f41",textDecoration:"none",borderRadius:"5px"}}>
-    <li style={{color:"#FFFFFF",listStyle:"none",textDecoration:"none"}}>Home</li>
+   <NavLink to="/"  >
+    <li style={{color:"#202122"}}>Home</li>
     </NavLink> 
    <NavLink to="/community"  >
     <li style={{color:"#202122"}}><a>Community</a></li>
@@ -72,13 +71,13 @@ const Navbar = () => {
     <h4>{user?.displayName}</h4>
     <h4 style={{marginTop:"-20px",marginBottom:"-2px",width:"100px"}}>{user?.email}</h4>
    <NavLink to="/dashboard">
-    <li style={{color:"#202122"}}><a>DashBoard</a></li>
+    <li style={{ padding:"10px",border:"2px solid #6a2f41",borderRadius:"5px",listStyle:"none",paddingLeft:"40px",paddingRight:"40px",color:"#202122",fontSize:"16px",fontWeight:"bold"}}><a>DashBoard</a></li>
     </NavLink> 
    <NavLink to="/offer">
-    <li style={{color:"#202122"}}><a>Offer Anouncement</a></li>
+    <li style={{ padding:"10px",border:"2px solid #6a2f41",borderRadius:"5px",listStyle:"none",color:"#202122",fontSize:"16px",fontWeight:"bold",marginTop:"10px"}}><a>Offer Anouncement</a></li>
     </NavLink> 
    <NavLink >
-    <li style={{color:"#202122"}}><a><button onClick={handleLogOut}>Logout</button></a></li>
+    <li style={{color:"#202122"}}><a><button onClick={handleLogOut} style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px",listStyle:"none",paddingLeft:"40px",paddingRight:"40px",color:"#FFFFFF",fontSize:"16px",fontWeight:"bold",marginTop:"10px"}}>Logout</button></a></li>
  
     </NavLink> 
    
@@ -167,7 +166,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            <img src='logo.png' style={{width:'150px', height:'70px'}}></img>
+           <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#6a2f41"}}>G</span>uide</h1>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
            <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>

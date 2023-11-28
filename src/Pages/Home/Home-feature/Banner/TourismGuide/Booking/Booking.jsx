@@ -137,7 +137,7 @@ return(
 {
   user?
   <div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>
-<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}}>Book Now</button>
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',color:"#FFFFFF",padding:"10px",border:"none",borderRadius:"5px"}}>Book Now</button>
 </div>
 :<>
  <div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>

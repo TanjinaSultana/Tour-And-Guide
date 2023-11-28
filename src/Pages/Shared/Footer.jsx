@@ -7,14 +7,29 @@ import IconButton from '@mui/material/IconButton';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { NavLink } from 'react-router-dom';
+<style>
+{`
+  @media only screen and (min-width: 425px) {
+    footer {
+      margin:0 20 20 0
+    }
+  }
 
+  @media only screen and (min-width: 768px) {
+    footer {
+     margin:0 20 20 0
+    }
+  }
+`}
+</style>
 const Footer = () => {
   return (
     <footer  style={{ background: 'linear-gradient(to top, #202122, #6a2f41)', height:"50vh",marginTop:"50px",borderRadius:"4px" }}>
       <Container  maxWidth="lg" >
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
-          <img src='logo.png' style={{width:'150px', height:'70px', marginTop:"70px" }}></img>
+          <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#FFFFFF"}}>G</span>uide</h1>
             {/* <img src="logo.png" alt="Logo" style={{ maxWidth: '100%' }} /> */}
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -42,16 +57,27 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6" style={{ color: '#ffffff' }}>About Us</Typography>
-            <Typography style={{ color: '#ffffff' }}>
+            <NavLink to="/about">
+            <Typography variant="h6" style={{ color: '#ffffff' ,fontSize:"16px"}}>About Us</Typography>
+            </NavLink>
+            <NavLink to="/blog">
+            <Typography variant="h6" style={{ color: '#ffffff',fontSize:"16px" }}>Blogs</Typography>
+            </NavLink>
+            <NavLink to="/community">
+            <Typography variant="h6" style={{ color: '#ffffff',fontSize:"16px" }}>Community</Typography>
+            </NavLink>
+            <NavLink to="/contact">
+            <Typography variant="h6" style={{ color: '#ffffff',fontSize:"16px" }}>contact Us</Typography>
+            </NavLink>
+            {/* <Typography style={{ color: '#ffffff' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Typography>
+            </Typography> */}
           </Grid>
         </Grid>
         <hr style={{marginTop:"20px"}}></hr>
         <Typography variant="body2" style={{ color: '#ffffff' ,marginTop:"30px" }} align="center">
-          © {new Date().getFullYear()} Your Website Name
+          © {new Date().getFullYear()} Tour Guide
         </Typography>
       </Container>
      

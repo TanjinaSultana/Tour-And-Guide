@@ -9,13 +9,15 @@ const Banner = () => {
         <div>
            <Container  style={{ paddingTop: '100px', height:"100vh",marginTop:"-10px" ,paddingBottom: '100px',backgroundImage:'url("https://i.ibb.co/jb3vGss/images.jpg")',backgroundSize:"cover" }}>
       <Typography variant="h4" component="div" gutterBottom > 
-      <SectionTitle
+      {/* <SectionTitle
        heading={" Experience the World with Insightful Guided Tours With Us "}
      
        subHeading={"Guides Who Turn Your Travel Dreams into Reality, One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location."}
        >
 
-      </SectionTitle>
+      </SectionTitle> */}
+      <h6>Experience the World with <br></br>Insightful Guided Tours With Us</h6>
+      <p style={{width:"500px",fontSize:"16px",marginTop:"-30px"}}>Guides Who Turn Your Travel Dreams into Reality, <br></br>One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location.</p>
       {/* Experience the World with Insightful <br></br> Guided Tours With Us */}
       </Typography>
       {/* <Typography variant="subtitle1" paragraph>
