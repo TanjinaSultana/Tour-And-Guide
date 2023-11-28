@@ -86,12 +86,12 @@ const AllUser = () => {
                                    {
                                     user?.role === 'admin' || user.role === 'tourGuide' ?
                                     <>
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" disabled ><FaUserShield></FaUserShield>Admin</button>
-                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Guide</button>
+                                    <button onClick={() => handleMakeAdmin(user)} style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled ><FaUserShield></FaUserShield>Admin</button>
+                                    <button onClick={() => handleMakeGuide(user)} style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled><FaUserShield></FaUserShield>Guide</button>
                                     </>:
                                     <>
-                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Admin</button>
-                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Guide</button>
+                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"  style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}><FaUserShield></FaUserShield>Admin</button>
+                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}><FaUserShield></FaUserShield>Guide</button>
                                     </>
                                    }
                              

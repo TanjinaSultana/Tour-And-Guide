@@ -2,19 +2,21 @@ import React, { useContext } from 'react';
 import { TextField, Button, Container, Typography, Paper, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import { useState } from 'react';
+
 
 const Register = () => {
   const { register, handleSubmit,reset, formState: { errors } } = useForm();
   const { createUser,updateUserProfile } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic()
+  const [error,setError] = useState("")
+  const navigate = useNavigate()
   const onSubmit = data => {
-    console.log(data);
-
-    // Modify the createUser function call to include name and photo
+    
     createUser(data.email, data.password)
       .then(res => {
         const logUser = res.user;
@@ -30,14 +32,15 @@ const Register = () => {
               if(res.data.insertedId){
                 reset();
                 Swal.fire("Registration Sucessfully");
+                navigate("/")
                 
               }
             })
            
-        }).catch(err =>{
-          console.log(err);
+         }).catch(err =>{
+       setError(err.message)
         });
-        console.log(logUser);
+       
       })
   };
 
@@ -106,6 +109,7 @@ const Register = () => {
             <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: 20, backgroundColor: "#6a2f41" }}>
               Register
             </Button>
+            <p>{error}</p>
           </form>
           <p><small style={{fontSize:"14px",fontWeight:"normal"}}>Already have an account <Link to="/login">Login</Link></small></p>
           <SocialLogin></SocialLogin>

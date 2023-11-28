@@ -6,11 +6,15 @@ import Typography from '@mui/material/Typography';
 import useAuth from '../../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const {signIn,user} = useContext(AuthContext);
+  const navigate = useNavigate()
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/"
    const handleSubmit = e =>{
     e.preventDefault();
     const form = e.target;
@@ -20,8 +24,9 @@ const Login = () => {
     signIn(email,password)
     .then(res=>{
       Swal.fire(`${user?.displayName} is logged in succesfully`);
+      navigate(from,{replace:true})
     })
-
+.catch(err => toast.error("this didnt match",err.message))
    }
 
     return (

@@ -52,7 +52,7 @@ const MyWishlist = () => {
                                 <td>{user?.price}</td>
                                   <td>
 
-                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user._id)} ><FaTrashAlt></FaTrashAlt></button>
+                                    <button style={{border:"2px solid #6a2f41",padding:"10px"}} onClick={()=>handleDelete(user._id)} ><FaTrashAlt></FaTrashAlt></button>
                                     <Link to={`/${user?.tourItemId}`}>
                                         <Button variant="outlined" style={buttonStyle}  >
                                          View Details

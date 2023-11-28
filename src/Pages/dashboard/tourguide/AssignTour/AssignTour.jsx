@@ -61,8 +61,8 @@ const AssignTour = () => {
                                 
                                   <td>
 
-                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={() => handleAccept(user)} >Accept</button>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={() => handleReject(user)}>Reject</button>
+                                    <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} onClick={() => handleAccept(user)} >Accept</button>
+                                    <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} onClick={() => handleReject(user)}>Reject</button>
                                    
                                   </td>
                                   

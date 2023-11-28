@@ -22,11 +22,13 @@ const handleAdd = (e) => {
   const name = form.name.value;
   const prices = form.prices.value
   const images = form.images.value
+  const userName = form.userName.value
+  const userImage = form.userImage.value
  
   const email = form.email.value
   console.log({startDate, tourGuideName, name, email, prices,images});
 
-  const cartItem ={tourItemId:_id, startDate, tourGuideName, name, email, prices,images}
+  const cartItem ={tourItemId:_id, startDate, tourGuideName, name, email, prices,images,userName,userImage}
   axiosSecure.post('/cart',cartItem)
         .then(res=>{
 
@@ -76,7 +78,7 @@ return(
   <div style={{display:"flex",justifyContent:"center"}}>
 
 <form onSubmit={handleAdd} >
-  <div style={{border:"2px solid #6a2f41",padding:"70px",height:"300px",borderRadius:"5px"}}>
+  <div style={{border:"2px solid #6a2f41",padding:"70px",height:"350px",borderRadius:"5px"}}>
 
 <div  >
   <label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Name:</label>
@@ -114,6 +116,24 @@ return(
     name="email"
     type="email"
     defaultValue={user?.email}
+  />
+</div>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>User name:</label>
+  <input
+    id="userName"
+    name="userName"
+    type="text"
+    defaultValue={user?.displayName}
+  />
+</div>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>User image</label>
+  <input
+    id="userImage"
+    name="userImage"
+    type="userImage"
+    defaultValue={user?.photoURL}
   />
 </div>
 <div style={{marginTop:"10px"}}>

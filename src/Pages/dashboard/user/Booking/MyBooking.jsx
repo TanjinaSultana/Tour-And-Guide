@@ -76,22 +76,22 @@ const MyBooking = () => {
                                 <td>{user.startDate}</td>
                                 <td>{user.prices}</td>
                                 
-                                  <td>
+                                                     <td>
                                     {
                                         user?.status === "accept" ?<>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" >Accepted</button>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" disabled>Rejected</button>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" disabled>In Review</button>
+                                    <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} >Accepted</button>
+                                    <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Rejected</button>
+                                    <button  style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>In Review</button>
                                         </>:(user?.status === "reject"?<>
-                                            <button className="btn btn-ghost bg-orange-600  text-white" disabled>Accepted</button>
-                                        <button className="btn btn-ghost bg-orange-600  text-white">Rejected</button>
-                                        <button className="btn btn-ghost bg-orange-600  text-white" disabled>In Review</button>
+                                            <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}}disabled>Accepted</button>
+                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>Rejected</button>
+                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>In Review</button>
                                         </>:
                                         
                                         <>
-                                         <button className="btn btn-ghost bg-orange-600  text-white" disabled>Accepted</button>
-                                        <button className="btn btn-ghost bg-orange-600  text-white" disabled>Rejected</button>
-                                        <button className="btn btn-ghost bg-orange-600  text-white" >In Review</button>
+                                         <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Accepted</button>
+                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Rejected</button>
+                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>In Review</button>
                                         </>
                                         )
                                     }
@@ -105,17 +105,17 @@ const MyBooking = () => {
                                     <>
                                       {cart.length ? 
                 <Link to="/dashboard/payment">
-    <button className="btn btn-primary">Pay</button>
+    <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>Pay</button>
     </Link>
                 :
-                <button disabled className="btn btn-primary">Pay</button>
+                <button disabled style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}}>Pay</button>
                  
             }    {
                 count.length >= 3?
                 <>
                  
                  
-                 <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                 <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} >Apply</button>
                  <Confetti
                  width={width}
                  height={height}
@@ -123,42 +123,42 @@ const MyBooking = () => {
                
                  </>
                                      :
-                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+                                     <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Apply</button>
             }
                                     </>:(user?.status === "reject"?
                                     <>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" disabled>Pay</button>
+                                    <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Pay</button>
                                     {
                 count.length >= 3?
                 <>
                  
                  
-                <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} >Apply</button>
                 <Confetti
                 width={width}
                 height={height}
               />
                 </>
                                      :
-                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+                                     <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Apply</button>
             }
                                   
                                     </>:
                                     <>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user._id)} >Cancel</button>
+                                    <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} onClick={()=>handleDelete(user._id)} >Cancel</button>
                                     {
                 count.length >= 3?
                 <>
                  
                  
-                <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} >Apply</button>
                 <Confetti
                 width={width}
                 height={height}
               />
                 </>
                                      :
-                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+                                     <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}}disabled>Apply</button>
             }
                                     </>
                                     )

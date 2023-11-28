@@ -1,13 +1,38 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import { Container, Typography, Grid, Paper } from '@mui/material';
+import { Container, Typography, Grid, Paper, TextField } from '@mui/material';
+import useAuth from '../../../../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
+
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../../../../../hooks/useAxiosPublic';
 
 
 
 const Guides = ({guide}) => {
-  console.log(guide);
+const {user} = useAuth()
+const axiosPublic= useAxiosPublic()
     const  {name, image,email,contact,education,skills,workExperience,_id} = guide
+    const handleAdd = (e) => {
+      e.preventDefault()
+      const form = e.target;
+      const rating = form.rating.value;
+      const comment = form.comment.value;
+
+     
+    
+    
+    
+      const reviewItem ={rating,comment}
+     
+      axiosPublic.post('/review',reviewItem)
+            .then(res=>{
+              if(res.data.insertedId){
+                Swal.fire("we noticed your comment")
+              }
+    })
+    }
    
     return (
         <div>
@@ -45,6 +70,56 @@ const Guides = ({guide}) => {
         </Grid>
       </Grid>
     </Container>
+    <h1>Review Section</h1>
+    <div style={{display:"flex",justifyContent:"center"}}>
+            <form onSubmit={handleAdd}>
+              <div style= {{border:"2px solid #6a2f41",padding:"70px",height:"100px",borderRadius:"5px"}}>
+
+
+
+
+              <div>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Rating:</label>
+  <select
+   id='rating'
+    name="rating"
+    type="number"
+   
+  >
+  <option >1</option>
+  <option >2</option>
+  <option >3</option>
+  <option >4</option>
+  <option >5</option>
+    
+  </select>
+</div>
+
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Comment</label>
+  <TextField
+    id="comment"
+    name="comment"
+    type="comment"
+   
+  />
+</div>
+<div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>
+
+{
+    user?
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} >Submit</button>:<>
+<button type="submit"  style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} disabled>Submit</button>
+<br></br>
+<Link to="/login">{"Please Login"}</Link>
+</>
+}
+</div>
+              </div>
+
+
+</form>
+        </div>
         </div>
     );
 };

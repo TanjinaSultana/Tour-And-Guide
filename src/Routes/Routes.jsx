@@ -29,10 +29,12 @@ import Community from "../Pages/community/Community";
 import Blog from "../Pages/blog/Blog";
 import About from "../Pages/about/About";
 import Contact from "../Pages/contact/Contact";
+import Error from "../Errorpage/Error";
  export  const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<Error></Error>,
       children:[
         {
           path: '/',
