@@ -19,7 +19,7 @@ const Login = () => {
     console.log(email,password);
     signIn(email,password)
     .then(res=>{
-      Swal.fire(`${user?.email} is logged in succesfully`);
+      Swal.fire(`${user?.displayName} is logged in succesfully`);
     })
 
    }

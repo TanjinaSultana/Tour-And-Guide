@@ -33,7 +33,7 @@ const AssignTour = () => {
     }
 
     return (
-       <div>
+       <div  style={{marginTop:"70px"}}>
               <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -54,10 +54,10 @@ const AssignTour = () => {
                         {
                             assignTour.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
-                                <td>{user.packageName}</td>
-                                <td>{user.tourGuideName}</td>
-                                <td>{user.startDate}</td>
-                                <td>{user.prices}</td>
+                                <td>{user?.name}</td>
+                                <td>{user?.tourGuideName}</td>
+                                <td>{user?.startDate}</td>
+                                <td>{user?.prices}</td>
                                 
                                   <td>
 

@@ -27,7 +27,7 @@ const Guides = ({guide}) => {
             />
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} style={{marginTop:"100px"}}>
           <Paper elevation={3} style={{ padding: "5px" }}>
             <Typography variant="h4">{name}</Typography>
             <Typography variant="subtitle1">{email}</Typography>

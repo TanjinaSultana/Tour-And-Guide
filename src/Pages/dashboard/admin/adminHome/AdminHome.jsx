@@ -6,8 +6,9 @@ const AdminHome = () => {
     
     return (
         <div>
-            <h2>
-                <span>Hi,Welcome</span>
+            <h2 style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"200px"}}>
+                <span>Hi,Welcome </span>
+                <br></br>
                 {
                     user?.displayName ? user?.displayName: "back"
                 }

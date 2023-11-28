@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useCart from '../../../../hooks/useCart';
 
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
+
+import Confetti from 'react-confetti'
+import { useWindowSize } from '../../../../hooks/useWindowSize';
 // import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 // import Swal from 'sweetalert2';
 
 const MyBooking = () => {
     const [cart,refetch]= useCart();
+    const {user} = useAuth()
     const [axiosSecure] = useAxiosSecure();
-    
+    const [count,setCount]= useState([])
+    const { width, height } = useWindowSize()
+   
+  useEffect(()=>{
+    const remain = cart.filter(item => item.email === user?.email)
+    setCount(remain);
+  
+  },[cart,user?.email])
+ 
+  
     const total = cart.reduce((sum,item)=>parseFloat(item.prices) + sum,0)
-    console.log(total);
     const total2 = parseFloat(total)
     const handleDelete = (id) =>{
        
@@ -26,10 +39,18 @@ const MyBooking = () => {
      }
     
     return (
-        <div>
+        <div style={{marginTop:"60px"}}>
         <h3>
     Total Price: ${total2}
         </h3>
+        {
+            count.length>=3 ? <p style={{fontWeight:"bold"}}>Congratulation!You Will Get Discount</p>:""
+        }
+        {/* <ul>
+        {Object.entries(counts).map(([value, count]) => (
+          <li key={value}>{`${value}: ${count} times`}</li>
+        ))}
+      </ul> */}
               <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -88,16 +109,57 @@ const MyBooking = () => {
     </Link>
                 :
                 <button disabled className="btn btn-primary">Pay</button>
-            }
+                 
+            }    {
+                count.length >= 3?
+                <>
+                 
+                 
+                 <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                 <Confetti
+                 width={width}
+                 height={height}
+               />
+               
+                 </>
+                                     :
                                      <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+            }
                                     </>:(user?.status === "reject"?
                                     <>
                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Pay</button>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+                                    {
+                count.length >= 3?
+                <>
+                 
+                 
+                <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                <Confetti
+                width={width}
+                height={height}
+              />
+                </>
+                                     :
+                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+            }
+                                  
                                     </>:
                                     <>
                                     <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user._id)} >Cancel</button>
-                                    <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+                                    {
+                count.length >= 3?
+                <>
+                 
+                 
+                <button className="btn btn-ghost bg-orange-600  text-white" >Apply</button>
+                <Confetti
+                width={width}
+                height={height}
+              />
+                </>
+                                     :
+                                     <button className="btn btn-ghost bg-orange-600  text-white" disabled>Apply</button>
+            }
                                     </>
                                     )
                                     }

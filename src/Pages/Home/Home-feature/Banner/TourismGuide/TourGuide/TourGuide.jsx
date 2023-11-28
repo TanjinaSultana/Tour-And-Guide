@@ -19,7 +19,7 @@ const TourGuide = ({items}) => {
          {name}
          <div  style={{display:"flex",justifyContent:"end"}}>
 <Link to={`/guide/${_id}`}>
-        <Button size="small" >Details</Button>
+        <Button size="small" style={{color:"#FFFFFF",backgroundColor:"#6a2f41"}}>Details</Button>
 </Link>
          </div>
         </Typography>

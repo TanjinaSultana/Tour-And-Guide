@@ -23,7 +23,7 @@ const EachType = () => {
     },[packages,type])
   
     return (
-     <div>
+     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px",marginTop:"100px" }}>
         {
             types.map(item => <EachTypes
                 key={item._id}

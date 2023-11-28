@@ -26,7 +26,7 @@ const ViewDetails = () => {
             <h1 >Tour Section</h1>
             <ViewDetail tourPackages={tourPackage}></ViewDetail>
             <h1>Tour Plan</h1>
-            <TourPlan></TourPlan>
+            <TourPlan tour={tourPackage}></TourPlan>
             <h1>Tour Guides</h1>
             <TourGuides></TourGuides>
             <h1>Booking</h1>

@@ -32,7 +32,7 @@ import { FacebookIcon, FacebookShareButton, FacebookShareCount } from 'react-sha
  
 
 const StoryDetails = () => {
-    const [storys,setStorys] =useState([])
+    const [storys,setStorys] =useState({})
     const [story]=useStory();
     const {id} = useParams();
     useEffect(() =>{
@@ -53,12 +53,12 @@ const StoryDetails = () => {
 //     setExpanded(!expanded);
 //   };
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px" }}>
-               <Card sx={{ maxWidth: 345 }}>
+        <div style={{ marginTop:"140px",display:"flex",justifyContent:"center" }}>
+               <Card sx={{ maxWidth: 600 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        <img src={storys.userImage} style={{width:"70px",height:"70px",borderRadius:"50%"}}></img>
+                        <img src={storys?.userImage} style={{width:"600px",height:"70px",borderRadius:"50%"}}></img>
           </Avatar>
          
         }
@@ -67,30 +67,30 @@ const StoryDetails = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={storys.userName}
+        title={storys?.userName}
         subheader="September 14, 2016"
       />
       <CardMedia
         component="img"
         height="194"
-        image={storys.images}
+        image={storys?.images}
         alt="Paella dish"
       />
       <div>
 
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {storys.name}
+        <Typography variant="body2" style={{fontSize:"20px",fontWeight:"bold",marginTop:"-10px"}}>
+          {storys?.name}
         </Typography>
       </CardContent>
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.primary" style={{fontWeight:"bold",marginTop:"-25px"}}>
           {storys.guide}
         </Typography>
       </CardContent>
       </div>
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary"  style={{fontWeight:"medium",marginTop:"-25px"}}>
           {storys.detail}
         </Typography>
       </CardContent>

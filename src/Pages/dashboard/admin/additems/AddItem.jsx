@@ -54,8 +54,8 @@ const AddItem = () => {
     };
     return (
         <div>
-             <Container component="main" maxWidth="md">
-      <Paper elevation={3} style={{ padding: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 50, borderRadius: 5 }}>
+             <Container component="main" maxWidth="md" >
+      <Paper elevation={3} style={{ padding: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 50, borderRadius: 5 ,border:"2px solid #6a2f41"}}>
         <Typography variant="h5">Your Form</Typography>
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%', marginTop: 20 }}>
           <Grid container spacing={2}>
@@ -111,7 +111,7 @@ const AddItem = () => {
             </Grid>
             
           </Grid>
-          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: 20 }}>
+          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: 20,backgroundColor:"#6a2f41" }}>
             Submit
           </Button>
         </form>

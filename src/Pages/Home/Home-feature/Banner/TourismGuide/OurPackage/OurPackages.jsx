@@ -16,7 +16,8 @@ import Swal from 'sweetalert2';
 
 const OurPackages = ({items}) => {
   const buttonStyle = {
-    textDecoration: 'none', // Remove underline
+    textDecoration: 'none',
+    color:"#FFFFFF",backgroundColor:"#6a2f41" // Remove underline
   };
 const { image,type,title,price,_id} = items
 const {user}= useAuth()
@@ -63,7 +64,7 @@ const handleAdd = ()=>{
       <Link to={`/${_id}`}>
       <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
 
-      <Button variant="outlined" style={buttonStyle}  >
+      <Button variant="outlined" style={buttonStyle} >
        View Details
       </Button>
       </div>

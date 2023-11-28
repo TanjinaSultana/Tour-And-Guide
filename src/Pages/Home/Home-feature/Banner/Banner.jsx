@@ -7,7 +7,7 @@ import SectionTitle from '../../../../components/sectionTitle/SectionTitle';
 const Banner = () => {
     return (
         <div>
-           <Container  style={{ paddingTop: '100px', height:"90vh",marginTop:"0px" ,paddingBottom: '100px',backgroundImage:'url("https://i.ibb.co/z5sqNhd/banner1.jpg")' }}>
+           <Container  style={{ paddingTop: '100px', height:"100vh",marginTop:"-10px" ,paddingBottom: '100px',backgroundImage:'url("https://i.ibb.co/jb3vGss/images.jpg")',backgroundSize:"cover" }}>
       <Typography variant="h4" component="div" gutterBottom > 
       <SectionTitle
        heading={" Experience the World with Insightful Guided Tours With Us "}

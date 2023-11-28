@@ -120,11 +120,11 @@ const navigate = useNavigate();
                     },
                 }}
             />
-            <button className="btn btn-sm btn-primary my-4" type="submit" disabled={!stripe || !clientSecret} >
+            <button style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',color:"#FFFFFF",padding:"10px",border:"none",borderRadius:"5px"}} type="submit" disabled={!stripe || !clientSecret} >
                 Pay
             </button>
-            <p className="text-red-600">{error}</p>
-            {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
+            <p style={{color:"red"}}>{error}</p>
+            {transactionId && <p style={{color:"#202122"}}> Your transaction id: {transactionId}</p>}
         </form> 
         </div>
     );

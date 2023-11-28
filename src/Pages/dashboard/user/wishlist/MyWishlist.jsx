@@ -1,4 +1,3 @@
-import React from 'react';
 import useWish from '../../../../hooks/useWish';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,9 @@ import Swal from 'sweetalert2';
 
 const MyWishlist = () => {
     const buttonStyle = {
-        textDecoration: 'none', // Remove underline
+        textDecoration: 'none',
+         background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px",
+         color:"#FFFFFF" // Remove underline
       };
     const [wish,refetch] =useWish();
     const [axiosSecure] = useAxiosSecure()
@@ -26,7 +27,7 @@ const MyWishlist = () => {
      }
     //const [axiosSecure] = useAxiosSecure()
     return (
-        <div>
+        <div style={{marginTop:"70px"}}>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}
@@ -45,14 +46,14 @@ const MyWishlist = () => {
                         {
                             wish.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
-                                <td><img src={user.image} style={{width:"70px",height:"70px",borderRadius:"50%"}}></img></td>
-                                <td>{user.title}</td>
-                                <td>{user.type}</td>
-                                <td>{user.price}</td>
+                                <td><img src={user?.image} style={{width:"70px",height:"70px",borderRadius:"50%"}}></img></td>
+                                <td>{user?.title}</td>
+                                <td>{user?.type}</td>
+                                <td>{user?.price}</td>
                                   <td>
 
                                     <button className="btn btn-ghost bg-orange-600  text-white" onClick={()=>handleDelete(user._id)} ><FaTrashAlt></FaTrashAlt></button>
-                                    <Link to={`/${user.tourItemId}`}>
+                                    <Link to={`/${user?.tourItemId}`}>
                                         <Button variant="outlined" style={buttonStyle}  >
                                          View Details
                                         </Button>

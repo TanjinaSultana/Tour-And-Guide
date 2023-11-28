@@ -1,6 +1,7 @@
 import Carousel from "react-material-ui-carousel";
 import usePackage from "../../../../../hooks/usePackage";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../../../../components/sectionTitle/SectionTitle";
 
 
 
@@ -11,7 +12,11 @@ const TourType = () => {
  
     return (
         <div>
+<SectionTitle
+heading={"Tour Type"}
+>
 
+</SectionTitle>
           
 <Carousel itemsToShow={4} className="w-full">
       {packages.map((item) => (
@@ -28,36 +33,6 @@ const TourType = () => {
           </div>
         </div>
             </Link>
-        {/* <div  className="p-4">
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src={item.image} alt={item.type} style={{width:"200px", height:"200px"}}/>
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.type}</h2>
-            </div>
-          </div>
-        </div>
-        <div className="p-4">
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src={item.image} alt={item.type}  style={{width:"200px", height:"200px"}}/>
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.type}</h2>
-            </div>
-          </div>
-        </div>
-        <div  className="p-4">
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src={item.image} alt={item.type} style={{width:"200px", height:"200px",borderRadius:"5px"}}/>
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.type}</h2>
-            </div>
-          </div>
-        </div> */}
         </div>
       ))}
     </Carousel>

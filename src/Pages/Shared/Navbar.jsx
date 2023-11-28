@@ -43,19 +43,20 @@ const Navbar = () => {
       .catch(err=>console.log(err))
     }
     const navOptions = <>
-   <NavLink to="/">
-    <li style={{color:"#202122"}}>Home</li>
+   <NavLink to="/"  style={{paddingLeft:"40px",paddingRight:"40px",paddingTop:"10px",
+   paddingBottom:"10px",backgroundColor:"#6a2f41",textDecoration:"none",borderRadius:"5px"}}>
+    <li style={{color:"#FFFFFF",listStyle:"none",textDecoration:"none"}}>Home</li>
     </NavLink> 
-   <NavLink to="/">
+   <NavLink to="/community"  >
     <li style={{color:"#202122"}}><a>Community</a></li>
     </NavLink> 
-   <NavLink to="/">
+   <NavLink to="/blog" >
     <li style={{color:"#202122"}}><a>Blogs</a></li>
     </NavLink> 
-   <NavLink to="/">
+   <NavLink to="/about">
     <li style={{color:"#202122"}}><a>About Us</a></li>
     </NavLink> 
-   <NavLink to="/">
+   <NavLink to="/contact">
     <li style={{color:"#202122"}}><a>Contact Us</a></li>
     </NavLink> 
     {/* {
@@ -84,10 +85,10 @@ const Navbar = () => {
 </div>
     return (
         <div>
-          <AppBar  position="absolute" sx={{backgroundColor:"transparent",position:'absolute',opacity:"60px",zIndex:"40px",boxShadow:"none"}}>
+          <AppBar  position="absolute" sx={{ background: 'transparent',position:'absolute',opacity:"60px",zIndex:"40px",boxShadow:"none"}}>
       <Container  >
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -96,16 +97,16 @@ const Navbar = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'transparent',
               textDecoration: 'none',
             }}
           >
-            <img src='logo.png' style={{width:'150px', height:'70px',display:'block'}}></img>
+            {/* <img src='logo.png' style={{width:'150px', height:'70px',display:'block'}}></img> */}
             <br></br>
-            {/* <h1 style={{fontSize:"20px",color:"#202122"}}>Tour Guide</h1> */}
+            <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#6a2f41"}}>G</span>uide</h1>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -143,8 +144,8 @@ const Navbar = () => {
                 </MenuItem>
               ))} */}
               
-                <MenuItem  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{navOptions}</Typography>
+                <MenuItem  onClick={handleCloseNavMenu} >
+                  <Typography textAlign="center" >{navOptions}</Typography>
                 </MenuItem>
             
             </Menu>
@@ -174,7 +175,7 @@ const Navbar = () => {
               <Button
                 
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'flex' ,listStyle:'none' }}
+                sx={{ my: 2, color: 'white', display: 'flex' ,listStyle:'none', justifyContent:"space-between",gap:"20px" }}
               >
                 {navOptions}
               </Button>
@@ -212,7 +213,7 @@ const Navbar = () => {
            
             </Menu>
           </Box> :<NavLink to="/login">
-    <li style={{color:"#202122"}}><button>Login</button></li>
+    <button style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px",listStyle:"none",paddingLeft:"40px",paddingRight:"40px",color:"#FFFFFF",fontSize:"16px",fontWeight:"bold"}}>Login</button>
  
     </NavLink> 
 }

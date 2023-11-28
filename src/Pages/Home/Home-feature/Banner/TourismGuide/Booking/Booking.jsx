@@ -73,9 +73,13 @@ const handleAdd = (e) => {
 })
 }
 return(
-<form onSubmit={handleAdd}>
-<div>
-  <label>Package Name:</label>
+  <div style={{display:"flex",justifyContent:"center"}}>
+
+<form onSubmit={handleAdd} >
+  <div style={{border:"2px solid #6a2f41",padding:"70px",height:"300px",borderRadius:"5px"}}>
+
+<div  >
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Name:</label>
   <input
     defaultValue={title}
     id="name"
@@ -83,10 +87,11 @@ return(
     type="text"
     placeholder="Package Name"
     className="p-3 w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
+    style={{padding:"10px"}}
   />
 </div>
-<div>
-  <label>Tour Guide Name:</label>
+<div  style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Tour Guide Name:</label>
   <select
     onChange={(e) => setTourGuideName(e.target.value)}
     name="tourGuideName"
@@ -98,12 +103,12 @@ return(
     ))}
   </select>
 </div>
-<div>
-  <label>Date:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Date:</label>
   <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
 </div>
-<div>
-  <label>User Email:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>User Email:</label>
   <input
     id="email"
     name="email"
@@ -111,8 +116,8 @@ return(
     defaultValue={user?.email}
   />
 </div>
-<div>
-  <label>Package Image</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Image</label>
   <input
     id="images"
     name="images"
@@ -120,8 +125,8 @@ return(
     defaultValue={image}
   />
 </div>
-<div>
-  <label>Price:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Price:</label>
   <input
     id="prices"
     name="prices"
@@ -131,15 +136,22 @@ return(
 </div>
 {
   user?
-<button type="submit">Book Now</button>:<>
-<button type="submit" disabled>Book Now</button>
+  <div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}}>Book Now</button>
+</div>
+:<>
+ <div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} disabled>Book Now</button>
+</div>
 <Link to="/login">
 <h5>{"Please Login"}</h5>
 </Link>
 </>
 }
+  </div>
 
 </form>
+  </div>
 
 
   );

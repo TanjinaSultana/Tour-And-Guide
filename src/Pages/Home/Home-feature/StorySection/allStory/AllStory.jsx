@@ -5,7 +5,7 @@ import AllStories from './AllStories';
 const AllStory = () => {
     const [story] = useStory()
     return (
-        <div>
+        <div style={{marginTop:"130px"}}>
              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px" }}>
             {
                 story.map(item => <AllStories

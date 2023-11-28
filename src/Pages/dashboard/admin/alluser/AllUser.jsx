@@ -62,7 +62,7 @@ const AllUser = () => {
         </TableBody>
       </Table>
         </TableContainer>  */}
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto "  style={{marginTop:"40px"}}>
                 <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
@@ -86,12 +86,12 @@ const AllUser = () => {
                                    {
                                     user?.role === 'admin' || user.role === 'tourGuide' ?
                                     <>
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Make Admin</button>
-                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Make Guide</button>
+                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" disabled ><FaUserShield></FaUserShield>Admin</button>
+                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" disabled><FaUserShield></FaUserShield>Guide</button>
                                     </>:
                                     <>
-                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Make Admin</button>
-                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Make Guide</button>
+                                     <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Admin</button>
+                                    <button onClick={() => handleMakeGuide(user)} className="btn btn-ghost bg-orange-600  text-white" ><FaUserShield></FaUserShield>Guide</button>
                                     </>
                                    }
                              

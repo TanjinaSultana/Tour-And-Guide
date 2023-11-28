@@ -25,6 +25,10 @@ import AdminRoute from "./AdminRoute";
 import TourRoute from "./TourRoute";
 import AllStory from "../Pages/Home/Home-feature/StorySection/allStory/AllStory";
 import StoryDetails from "../Pages/Home/Home-feature/StorySection/StoryDetails/StoryDetails";
+import Community from "../Pages/community/Community";
+import Blog from "../Pages/blog/Blog";
+import About from "../Pages/about/About";
+import Contact from "../Pages/contact/Contact";
  export  const router = createBrowserRouter([
     {
       path: "/",
@@ -45,6 +49,22 @@ import StoryDetails from "../Pages/Home/Home-feature/StorySection/StoryDetails/S
         {
           path: 'allStory',
           element:<AllStory></AllStory>
+        },
+        {
+          path: 'community',
+          element:<Community></Community>
+        },
+        {
+          path: 'contact',
+          element:<Contact></Contact>
+        },
+        {
+          path: 'about',
+          element:<About></About>
+        },
+        {
+          path: 'blog',
+          element:<Blog></Blog>
         },
         {
           path: 'register',

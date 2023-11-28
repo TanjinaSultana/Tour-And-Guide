@@ -36,11 +36,12 @@ const StoryForm = () => {
       })
       }
     return (
-        <div>
+        <div style={{display:"flex",justifyContent:"center"}}>
             <form onSubmit={handleAdd}>
+              <div style= {{border:"2px solid #6a2f41",padding:"70px",height:"500px",borderRadius:"5px"}}>
 
 <div>
-  <label>Tour Guide Name:</label>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Tour Guide Name:</label>
   <select
    id='guide'
     name="guide"
@@ -54,9 +55,9 @@ const StoryForm = () => {
     ))}
   </select>
 </div>
-<div>
+<div style={{marginTop:"10px"}}>
     
-  <label>Package Name:</label>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Name:</label>
   <select
    id='name'
     name="name"
@@ -70,8 +71,8 @@ const StoryForm = () => {
   </select>
 </div>
 
-<div>
-  <label>Tourist Name:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Tourist Name:</label>
   <input
     id="userName"
     name="userName"
@@ -79,8 +80,8 @@ const StoryForm = () => {
    defaultValue={user?.displayName}
   />
 </div>
-<div>
-  <label>Tourist Image:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>Tourist Image:</label>
   <input
     id="userImage"
     name="userImage"
@@ -88,8 +89,8 @@ const StoryForm = () => {
    defaultValue={user?.photoURL}
   />
 </div>
-<div>
-  <label>User Email:</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>User Email:</label>
   <input
     id="email"
     name="email"
@@ -97,8 +98,8 @@ const StoryForm = () => {
    defaultValue={user?.email}
   />
 </div>
-<div>
-<label>Package Name:</label>
+<div style={{marginTop:"10px"}}>
+<label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Name:</label>
   <select
    id='images'
     name="images"
@@ -111,8 +112,8 @@ const StoryForm = () => {
     ))}
   </select>
 </div>
-<div>
-<label>Package Name:</label>
+<div style={{marginTop:"10px"}}>
+<label style={{fontWeight:"bolder",fontSize:"20px"}}>Package Name:</label>
   <select
    id='prices'
     name="prices"
@@ -125,8 +126,8 @@ const StoryForm = () => {
     ))}
   </select>
 </div>
-<div>
-  <label>My Journey</label>
+<div style={{marginTop:"10px"}}>
+  <label style={{fontWeight:"bolder",fontSize:"20px"}}>My Journey</label>
   <TextField
     id="detail"
     name="detail"
@@ -134,14 +135,19 @@ const StoryForm = () => {
    
   />
 </div>
+<div style={{marginTop:"20px",display:"flex",justifyContent:"center"}}>
+
 {
     cart.length>0?
-<button type="submit" >Submit</button>:<>
-<button type="submit" disabled>Submit</button>
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} >Submit</button>:<>
+<button type="submit"  style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} disabled>Submit</button>
 <h5>{
 "Please Book The Tour And Visit The Spot First"}</h5>
 </>
 }
+</div>
+              </div>
+
 
 </form>
         </div>

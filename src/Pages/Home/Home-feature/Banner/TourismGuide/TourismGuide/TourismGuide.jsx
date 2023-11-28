@@ -8,6 +8,7 @@ import { Typography } from '@mui/material';
 
 import OurPackage from '../OurPackage/OurPackage';
 import TourGuides from '../TourGuide/TourGuides';
+import Overview from '../overview/Overview';
 
 const TourismGuide = () => {
   const [value, setValue] = React.useState(0);
@@ -46,7 +47,7 @@ const TourismGuide = () => {
         </Tabs>
         <TabPanel value={value} index={0}>
         
-          <Typography>Item 1</Typography>
+          <Typography><Overview></Overview></Typography>
         </TabPanel>
         <TabPanel value={value} index={1}>
         {/* <OurPackage></OurPackage> */}

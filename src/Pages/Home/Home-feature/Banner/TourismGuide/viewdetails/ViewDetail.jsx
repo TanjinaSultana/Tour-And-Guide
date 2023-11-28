@@ -29,9 +29,7 @@ const ViewDetail = ({tourPackages}) => {
             <Typography variant="body1" paragraph>
               {details}
             </Typography>
-            <Button variant="contained" color="primary">
-              Explore Tours
-            </Button>
+            
             <Button size="small">${price}</Button>
           </div>
         </Grid>
