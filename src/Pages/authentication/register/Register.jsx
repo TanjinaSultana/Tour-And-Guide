@@ -31,8 +31,8 @@ const Register = () => {
             .then(res=>{
               if(res.data.insertedId){
                 reset();
-                Swal.fire("Registration Sucessfully");
                 navigate("/")
+                Swal.fire("Registration Sucessfully");
                 
               }
             })

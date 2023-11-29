@@ -30,7 +30,7 @@ const ViewDetail = ({tourPackages}) => {
               {details}
             </Typography>
             
-            <Button size="small">${price}</Button>
+            <Button size="small" style={{fontWeight:"normal",fontSize:"20px"}}>${price}</Button>
           </div>
         </Grid>
       </Grid>

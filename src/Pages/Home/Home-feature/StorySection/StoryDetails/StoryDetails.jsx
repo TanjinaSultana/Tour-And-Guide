@@ -95,7 +95,7 @@ const StoryDetails = () => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" style={{fontSize:"20px"}}>
          ${storys.prices}
         </IconButton>
         <FacebookShareButton url={shareUrl} onClick={handleShare}/>

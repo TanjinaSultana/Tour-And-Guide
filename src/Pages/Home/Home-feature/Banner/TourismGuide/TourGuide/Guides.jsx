@@ -108,7 +108,7 @@ const axiosPublic= useAxiosPublic()
 
 {
     user?
-<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} >Submit</button>:<>
+<button type="submit" style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px",color:"#FFFFFF"}} >Submit</button>:<>
 <button type="submit"  style={{ background: 'linear-gradient(to right, #202122, #6a2f41)',padding:"10px",border:"none",borderRadius:"5px"}} disabled>Submit</button>
 <br></br>
 <Link to="/login">{"Please Login"}</Link>

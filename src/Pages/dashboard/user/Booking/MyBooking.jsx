@@ -61,13 +61,15 @@ const MyBooking = () => {
                             <th>TourGuideName</th>
                             <th>Date</th>
                             <th>Price</th>
-                            <th>Status</th>
+                            <th >Status</th>
                             <th>Action</th>
                             
                             
                         </tr>
                     </thead>
                     <tbody>
+                    
+
                         {
                             cart.map((user, index) => <tr key={user._id}>
                                 <th>{index + 1}</th>
@@ -78,21 +80,27 @@ const MyBooking = () => {
                                 
                                                      <td>
                                     {
-                                        user?.status === "accept" ?<>
+                                        user?.status === "accept" ?<div style={{marginLeft:"20px"}}>
                                     <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}} >Accepted</button>
-                                    <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Rejected</button>
-                                    <button  style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>In Review</button>
-                                        </>:(user?.status === "reject"?<>
+                                    <br></br>
+                                    <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}} disabled>Rejected</button>
+                                    <br></br>
+                                    <button  style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}} disabled>In Review</button>
+                                        </div>:(user?.status === "reject"?<div style={{marginLeft:"20px"}}>
                                             <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}}disabled>Accepted</button>
-                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>Rejected</button>
-                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>In Review</button>
-                                        </>:
+                                            <br></br>
+                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}}>Rejected</button>
+                                        <br></br>
+                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}} disabled>In Review</button>
+                                        </div>:
                                         
-                                        <>
+                                        <div style={{marginLeft:"20px"}}>
                                          <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Accepted</button>
-                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Rejected</button>
-                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>In Review</button>
-                                        </>
+                                         <br></br>
+                                        <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}} disabled>Rejected</button>
+                                        <br></br>
+                                        <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px",marginTop:"2px"}}>In Review</button>
+                                        </div>
                                         )
                                     }
                                     
@@ -103,12 +111,16 @@ const MyBooking = () => {
                                     {
                                     user?.status === "accept"?
                                     <>
-                                      {cart.length ? 
+                                      {cart.length ? <>
                 <Link to="/dashboard/payment">
     <button style={{background:"#6a2f41", color:"#FFFFFF",border:"none" ,borderRadius:"5px",padding:"10px"}}>Pay</button>
     </Link>
-                :
+  
+    </>
+                :<>
                 <button disabled style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}}>Pay</button>
+                <br></br>
+                </>
                  
             }    {
                 count.length >= 3?
@@ -123,7 +135,7 @@ const MyBooking = () => {
                
                  </>
                                      :
-                                     <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px"}} disabled>Apply</button>
+                                     <button style={{background:"#6a2f41", color:"#202122",border:"none" ,borderRadius:"5px",padding:"10px",}} disabled>Apply</button>
             }
                                     </>:(user?.status === "reject"?
                                     <>
@@ -170,6 +182,7 @@ const MyBooking = () => {
                              
                             </tr>)
                         }
+                      
                         
                         
                     </tbody>

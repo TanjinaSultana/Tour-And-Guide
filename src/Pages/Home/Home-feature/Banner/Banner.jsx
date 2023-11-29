@@ -15,9 +15,11 @@ const Banner = () => {
        subHeading={"Guides Who Turn Your Travel Dreams into Reality, One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location."}
        >
 
-      </SectionTitle> */}
-      <h6>Experience the World with <br></br>Insightful Guided Tours With Us</h6>
+      </SectionTitle> */}<div style={{marginTop:"150px"}}>
+
+      <h4>Experience the World with <br></br>Insightful Guided Tours With Us</h4>
       <p style={{width:"500px",fontSize:"16px",marginTop:"-30px"}}>Guides Who Turn Your Travel Dreams into Reality, <br></br>One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location.</p>
+      </div>
       {/* Experience the World with Insightful <br></br> Guided Tours With Us */}
       </Typography>
       {/* <Typography variant="subtitle1" paragraph>

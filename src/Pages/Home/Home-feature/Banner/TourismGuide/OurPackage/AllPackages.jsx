@@ -52,7 +52,7 @@ const AllPackages = ({items}) => {
           <FavoriteIcon />
         </IconButton>
         </button>
-        <Button size="small">${price}</Button>
+        <Button size="small" style={{fontWeight:"normal",fontSize:"20px"}}>${price}</Button>
       </CardActions>
       <Link to={`/${_id}`}>
       <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>

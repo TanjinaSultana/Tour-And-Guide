@@ -92,7 +92,7 @@ const AddGuide = () => {
 
             
           </Grid>
-          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: 20 }}>
+          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: 20,backgroundColor:"#6a2f41" }} >
             Submit
           </Button>
         </form>

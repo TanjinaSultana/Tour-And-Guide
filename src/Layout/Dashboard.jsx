@@ -14,13 +14,13 @@ const Dashboard = () => {
   return (
     <div style={{ display: 'flex' }}>
       <CssBaseline />
-<Navbar position="fixed">
+{/* <Navbar position="fixed">
 <Toolbar>
           <Typography variant="h6" noWrap>
             Dashboard
           </Typography>
         </Toolbar>
-</Navbar>
+</Navbar> */}
       {/* App Bar */}
       {/* < position="fixed">
         <Toolbar>
@@ -42,17 +42,18 @@ const Dashboard = () => {
           },
         }}
        
+       
       >
         <Toolbar />
         {
           isAdmin ? <>
           
-        <List>
+        <List  >
           <ListItem button component={NavLink} to="/dashboard/home">
             <ListItemIcon>
               <FaHome />
             </ListItemIcon>
-            <ListItemText primary="Admin Profile" />
+            <ListItemText primary="My Profile" />
           </ListItem>
 
           <ListItem button component={NavLink} to="/dashboard/addItem">
@@ -66,9 +67,31 @@ const Dashboard = () => {
             <ListItemIcon>
               <FaUsers />
             </ListItemIcon>
-            <ListItemText primary="All Users" />
+            <ListItemText primary="Manage Users" />
           </ListItem>
         </List>
+<div>
+<hr style={{color:"#202122"}}></hr>
+      <NavLink to="/"   style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122",fontWeight:"bolder"}}>Home</li>
+    </NavLink> 
+   <NavLink to="/community"  style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122",fontWeight:"bolder"}}><a>Community</a></li>
+    </NavLink> 
+   <NavLink to="/blog" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Blogs</a></li>
+    </NavLink> 
+   <NavLink to="/about" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>About Us</a></li>
+    </NavLink> 
+   <NavLink to="/contact" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Contact Us</a></li>
+    </NavLink> 
+</div>
+
+
+
+
           </>:(isTourGuide?
           <> <List>
           <ListItem button component={NavLink} to="/dashboard/guidehome">
@@ -86,9 +109,26 @@ const Dashboard = () => {
           </ListItem>
 
          
-        </List></>
+        </List>
+         <hr style={{color:"#202122"}}></hr>
+         <NavLink to="/"   style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+       <li style={{color:"#202122",fontWeight:"bolder"}}>Home</li>
+       </NavLink> 
+      <NavLink to="/community"  style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+       <li style={{color:"#202122",fontWeight:"bolder"}}><a>Community</a></li>
+       </NavLink> 
+      <NavLink to="/blog" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+       <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Blogs</a></li>
+       </NavLink> 
+      <NavLink to="/about" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+       <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>About Us</a></li>
+       </NavLink> 
+      <NavLink to="/contact" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+       <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Contact Us</a></li>
+       </NavLink> 
+        </>
         :
-        <> <List>
+        <> <List >
         <ListItem button component={NavLink} to="/dashboard/userhome">
           <ListItemIcon>
             <FaHome />
@@ -110,7 +150,25 @@ const Dashboard = () => {
         </ListItem>
 
        
-      </List></>
+      </List>
+      
+      <hr style={{color:"#202122"}}></hr>
+      <NavLink to="/"   style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122",fontWeight:"bolder"}}>Home</li>
+    </NavLink> 
+   <NavLink to="/community"  style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122",fontWeight:"bolder"}}><a>Community</a></li>
+    </NavLink> 
+   <NavLink to="/blog" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Blogs</a></li>
+    </NavLink> 
+   <NavLink to="/about" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>About Us</a></li>
+    </NavLink> 
+   <NavLink to="/contact" style={{listStyle:"none",display:"flex",justifyContent:"center"}}>
+    <li style={{color:"#202122" ,fontWeight:"bolder"}}><a>Contact Us</a></li>
+    </NavLink> 
+      </>
           )
         }
       </Drawer>
