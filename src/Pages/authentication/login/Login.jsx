@@ -23,7 +23,7 @@ const Login = () => {
     console.log(email,password);
     signIn(email,password)
     .then(res=>{
-      Swal.fire(`${user?.displayName} is logged in succesfully`);
+      Swal.fire(`Logged in succesfully`);
       navigate(from,{replace:true})
     })
 .catch(err => toast.error("this didnt match",err.message))
