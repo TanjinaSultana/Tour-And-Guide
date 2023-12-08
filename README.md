@@ -1,23 +1,29 @@
 # PROJECT TITLE
   • Tour  Guide
 ## PROJECT DESCRIPTION
-• This project is based on E-commerce-site.
-• There are some services about Tour & Guide Related.
 
-• Showing services by Card
+Discover the world through the eyes of passionate tour guides or embark on a journey to share your expertise with fellow travelers. Explore & Experience connects enthusiasts with guides, creating a global community driven by a love for exploration.
+
+
 -feature 1:
-•Service Card:Clicking the view details it shows the details route on this specific service and with  button book.
+
+•Admin Dashboard:Admin can add tour service and manage users and user status selecting by tour-guide,admin or user.
+
 -feature 2: 
-•Login page:By giving the information on the input field after submission the login succes toast will be shown and logout, Initially Login page shown in the navavr but after login logout page shown.
+•Authentication:Authentication and authorization are added in some feature are private to explore this have to login first.
+
 -feature 3:
-•Book Now Button:Clicking on book now button it check is it login or not if login then tour will book otherwise nbutton will be disable 
+
+•Payment System:User can pay to purchase their own booking tour service.
+
 -feature 4:
-•Overview:Clicking on this tab it will  show some video content.
+
+•Share Story:User can share their story which places are they visit.
+
 -feature 5:
-•Our Packae:Clicking this tab it will show initially 3 card packages after clicking all packages it will redirect all packages page..  
--feature 7:
-•Register Page:By giving the information all clicking register button it will show a toast user created.and navigate the home page.
-•Login page:By giving the information on the input field after submission the login succes toast will be shown and logout,displayname,photo are appear. Initially Login page shown in the navavr but after login logout page shown.
+
+•Book Tour: User Can Book Service according their choice.  
+
 
 ## GETTING STARTED
 Follow these steps to set project up and running:
@@ -30,6 +36,8 @@ Follow these steps to set project up and running:
 6. install material ui : `npm install @mui/material @emotion/react @emotion/styled`
 7. install swet alert : `$ npm install sweet-alert`
 ## Live Link : `https://tour-guide-b6f45.web.app`
+## Client Link : `https://github.com/TanjinaSultana/Local-Tour-Client-side`
+## Server Link : `https://github.com/TanjinaSultana/Tour-Guide-Server`
 
 ## Technology: 
 # Fronted:
@@ -39,9 +47,9 @@ Follow these steps to set project up and running:
 
 ## Usage
 To use this Tour-Guide application:
-• open the browser with this live link ``
-• Click the select button from the done.
-• Book The Service.
+• open the browser with this live link : `https://tour-guide-b6f45.web.app`
+
+
 ## Contributing
 If you'd like to contribute to this project, please follow these guidelines:
 • Fork the repository.
