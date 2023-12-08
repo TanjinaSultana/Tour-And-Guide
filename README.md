@@ -29,7 +29,13 @@ Follow these steps to set project up and running:
 6. install tailwind : `npm install -D tailwindcss postcss autoprefixer npx tailwindcss init -p`
 6. install material ui : `npm install @mui/material @emotion/react @emotion/styled`
 7. install swet alert : `$ npm install sweet-alert`
-8. live link : `https://tour-guide-b6f45.web.app`
+## Live Link : `https://tour-guide-b6f45.web.app`
+
+## Technology: 
+# Fronted:
+• React.js,JavaScript,Material Ui,Tailwind CSS
+# Backend:
+• Express.js and MongoDB
 
 ## Usage
 To use this Tour-Guide application:
