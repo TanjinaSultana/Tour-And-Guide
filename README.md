@@ -5,22 +5,22 @@
 Discover the world through the eyes of passionate tour guides or embark on a journey to share your expertise with fellow travelers. Explore & Experience connects enthusiasts with guides, creating a global community driven by a love for exploration.
 
 
--feature 1:
+-Feature 1:
 
 •Admin Dashboard:Admin can add tour service and manage users and user status selecting by tour-guide,admin or user.
 
--feature 2: 
+-Feature 2: 
 •Authentication:Authentication and authorization are added in some feature are private to explore this have to login first.
 
--feature 3:
+-Feature 3:
 
 •Payment System:User can pay to purchase their own booking tour service.
 
--feature 4:
+-Feature 4:
 
 •Share Story:User can share their story which places are they visit.
 
--feature 5:
+-Feature 5:
 
 •Book Tour: User Can Book Service according their choice.  
 
@@ -41,9 +41,9 @@ Follow these steps to set project up and running:
 
 ## Technology: 
 # Fronted:
-• React.js,JavaScript,Material Ui,Tailwind CSS
+• React.js,JavaScript,Material Ui,Tailwind CSS And Html
 # Backend:
-• Express.js and MongoDB
+• Express.js, MongoDB and Firebase
 
 ## Usage
 To use this Tour-Guide application:
