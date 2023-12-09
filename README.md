@@ -38,7 +38,7 @@ Follow these steps to set project up and running:
 
 
 <a href="https://tour-guide-b6f45.web.app">Live Link</a>
-<a href="https://github.com/TanjinaSultana/Local-Tour-Client-side">Client-Side-Link</a>
+<a href="https://github.com/TanjinaSultana/Tour-And-Guide">Client-Side-Link</a>
 <a href="https://github.com/TanjinaSultana/Tour-Guide-Server">Server-Side-Link</a>
 
 ## Technology: 
