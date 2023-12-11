@@ -34,11 +34,11 @@ const SingleStory = ({items}) => {
         <div>
             <Link to={`/story/${_id}`}>
 
-           <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
+           <Card sx={{ maxWidth: 345 }} className='h-[315px]'>
+      <CardHeader className='font-bold text-3xl'
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            <img src={userImage} style={{width:"70px",height:"70px",borderRadius:"50%"}}></img>
+            <img src={userImage} style={{width:"70px",height:"70px",borderRadius:"50%"}} className='font-medium'></img>
           </Avatar>
         }
         action={

@@ -17,8 +17,9 @@ const Banner = () => {
 
       </SectionTitle> */}<div style={{marginTop:"150px"}}>
 
-      <h4>Experience the World with <br></br>Insightful Guided Tours With Us</h4>
-      <p style={{width:"500px",fontSize:"16px",marginTop:"-30px"}}>Guides Who Turn Your Travel Dreams into Reality, <br></br>One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location.</p>
+      <h4 className='-mt-20'>Experience the World with <br></br>Insightful Guided Tours With Us</h4>
+      <br></br>
+      <p style={{width:"500px",fontSize:"16px",marginTop:"-30px"}} className='mt-30'>Guides Who Turn Your Travel Dreams into Reality, <br></br>One Tour at a Time.Let Our Guides Lead You to the Best-Kept Secrets of Every Location.</p>
       </div>
       {/* Experience the World with Insightful <br></br> Guided Tours With Us */}
       </Typography>

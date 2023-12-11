@@ -4,7 +4,7 @@ const Overview = () => {
   return (
     <>
      
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' style={{  justifyContent: 'center', gap: '50px', marginTop: '100px' }}>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' style={{  justifyContent: 'center', marginTop: '100px' }}>
       <iframe
         width="360"
         height="315"

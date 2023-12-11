@@ -17,7 +17,7 @@ const Story = () => {
 
             </SectionTitle>
 
-        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' style={{  gridGap: "20px" }}>
+        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' style={{  gridGap: "20px" }}>
             {
                 storyItem.map(item => <SingleStory
                     key={item._id}

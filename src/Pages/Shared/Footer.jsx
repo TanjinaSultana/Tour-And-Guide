@@ -26,13 +26,13 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-    <footer style={{ background: 'linear-gradient(to top, #202122, #6a2f41)'}} className="text-[#FFFFFF] footer p-10 bg-base-200 text-base-content">
+    <footer style={{ background: 'linear-gradient(to top, #202122, #6a2f41)'}} className="text-[#FFFFFF] footer p-10 bg-base-200 text-base-content mt-24">
   <aside>
   <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#FFFFFF"}}>G</span>uide</h1>
    
   </aside> 
   <nav>
-    <header className="footer-title">Services</header> 
+    <header className="footer-title text-[#FFFFFF] ">Services</header> 
     <NavLink to="/"  >
     <li style={{color:"#FFFFFF",listStyle:"none"}}>Home</li>
     </NavLink> 
@@ -45,7 +45,7 @@ const Footer = () => {
    
   </nav> 
   <nav>
-    <header className="footer-title">Company</header> 
+    <header className="footer-title text-[#FFFFFF]">Company</header> 
     <NavLink to="/about">
     <li style={{color:"#FFFFFF",listStyle:"none"}}><a>About Us</a></li>
     </NavLink> 
@@ -54,10 +54,10 @@ const Footer = () => {
     </NavLink> 
   </nav> 
   <nav>
-    <header className="footer-title">Legal</header> 
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <header className="footer-title text-[#FFFFFF]">Legal</header> 
+    <a className="link link-hover text-[#FFFFFF]">Terms of use</a>
+    <a className="link link-hover text-[#FFFFFF]">Privacy policy</a>
+    <a className="link link-hover text-[#FFFFFF]">Cookie policy</a>
   </nav>
 </footer>
     

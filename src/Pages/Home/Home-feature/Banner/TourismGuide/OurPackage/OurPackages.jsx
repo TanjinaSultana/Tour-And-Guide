@@ -37,14 +37,15 @@ const handleAdd = ()=>{
 }
     return (
         <div >
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ maxWidth: 345 }} className='h-[345px]'>
       <CardMedia
         component="img"
         alt="green iguana"
-        height="140"
+        height="50"
+        weight="50"
         image={image}
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="div">
          {title}
         </Typography>
@@ -52,7 +53,8 @@ const handleAdd = ()=>{
        {type}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className='-mt-4
+      '>
         <button onClick={handleAdd}>
 
       <IconButton aria-label="add to favorites">
@@ -62,7 +64,8 @@ const handleAdd = ()=>{
         <Button size="small" style={{fontWeight:"normal",fontSize:"20px"}}>${price}</Button>
       </CardActions>
       <Link to={`/${_id}`}>
-      <div style={{display:"flex",justifyContent:"end",padding:"20px"}}>
+      <div style={{display:"flex",justifyContent:"end",padding:"20px"}} className='-mt-24
+      '>
 
       <Button variant="outlined" style={buttonStyle} >
        View Details

@@ -6,7 +6,7 @@ const AllPackage = () => {
     const [pacakges] =usePackage();
     return (
         <div style={{marginTop:"200px"}}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px" }}  key={pacakges._id}>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'  key={pacakges._id}>
 
 {
    pacakges.map(item => <AllPackages
