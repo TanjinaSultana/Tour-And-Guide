@@ -37,14 +37,14 @@ const handleAdd = ()=>{
 }
     return (
         <div >
-              <Card sx={{ maxWidth: 345 }} className='h-[345px]'>
-      <CardMedia
+              <Card  className='w-[350px] h-[400px]'>
+      {/* <CardMedia
         component="img"
         alt="green iguana"
-        height="50"
-        weight="50"
+       
         image={image}
-      />
+      /> */}
+      <img src={image} className='w-[400px] h-[200px]'></img>
       <CardContent >
         <Typography gutterBottom variant="h5" component="div">
          {title}

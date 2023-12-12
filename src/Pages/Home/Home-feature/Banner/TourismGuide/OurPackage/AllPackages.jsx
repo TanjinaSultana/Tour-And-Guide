@@ -30,13 +30,14 @@ const AllPackages = ({items}) => {
     return (
         <div>
             <div >
-              <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+              <Card className='w-[350px] h-full'>
+      {/* <CardMedia
         component="img"
         alt="green iguana"
         height="140"
         image={image}
-      />
+      /> */}
+      <img src={image } className='w-[400px] h-[200px]'></img>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
          {title}

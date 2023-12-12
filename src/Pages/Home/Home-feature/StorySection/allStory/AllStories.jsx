@@ -39,7 +39,7 @@ const AllStories = ({items}) => {
         <div>
             <Link to={`/story/${_id}`}>
              <div>
-           <Card sx={{ maxWidth: 345 }}>
+           <Card className='w-[350px] h-[400px]'>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -54,12 +54,13 @@ const AllStories = ({items}) => {
         title={userName}
         subheader="23 November 2024"
       />
-      <CardMedia
+      {/* <CardMedia
         component="img"
         height="194"
         image={images}
         alt="Paella dish"
-      />
+      /> */}
+       <img src={images } className='w-[400px] h-[200px]'></img>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
        

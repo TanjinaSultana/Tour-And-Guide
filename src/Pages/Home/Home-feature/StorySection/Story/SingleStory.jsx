@@ -34,7 +34,7 @@ const SingleStory = ({items}) => {
         <div>
             <Link to={`/story/${_id}`}>
 
-           <Card sx={{ maxWidth: 345 }} className='h-[315px]'>
+           <Card className='w-[350px] h-full'>
       <CardHeader className='font-bold text-3xl'
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -49,12 +49,13 @@ const SingleStory = ({items}) => {
         title={userName}
         subheader="23 November 2024"
       />
-      <CardMedia
+      {/* <CardMedia
         component="img"
         height="194"
         image={images}
         alt="Paella dish"
-      />
+      /> */}
+       <img src={images } className='w-[400px] h-[200px]'></img>
       {/* <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook

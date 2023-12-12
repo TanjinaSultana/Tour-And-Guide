@@ -13,7 +13,7 @@ const TourGuides = () => {
     return (
         <div style={{backgroundColor:"#FFFFFF"}} className="sliderContainer">
             
-          <div  className="custom-slider grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
+          <div  className="custom-slider grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4" >
           
              {guide.map((item) => (
             <TourGuide 
