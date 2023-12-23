@@ -34,7 +34,7 @@ const SingleStory = ({items}) => {
         <div>
             <Link to={`/story/${_id}`}>
 
-           <Card className='w-[350px] h-full'>
+           <Card className='w-[350px] h-full bg-indigo-500 shadow-lg shadow-indigo-500/50 ...'>
       <CardHeader className='font-bold text-3xl'
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -109,6 +109,7 @@ const SingleStory = ({items}) => {
         </CardContent>
       </Collapse> */}
     </Card>
+    
             </Link>
         </div>
     );

@@ -26,9 +26,9 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-    <footer style={{ background: 'linear-gradient(to top, #202122, #6a2f41)'}} className="text-[#FFFFFF] footer p-10 bg-base-200 text-base-content mt-24">
+    <footer style={{ background: 'linear-gradient(to top, #202122, #6a2f41)'}} className="text-[#FFFFFF] footer p-24 h-72 bg-base-200 text-base-content mt-24">
   <aside>
-  <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#FFFFFF"}}>G</span>uide</h1>
+  <h1 style={{fontSize:"40px",color:"#FFFFFF" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#FFFFFF",fontStyle:"italic"}}>G</span>uide</h1>
    
   </aside> 
   <nav>

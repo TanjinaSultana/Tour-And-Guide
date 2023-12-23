@@ -7,7 +7,7 @@ const Main = () => {
     const location = useLocation();
     const noNav = location.pathname.includes('login') || location.pathname.includes('register') || location.pathname.includes('dashboard')
     return (
-        <div>
+        <div >
              {
                 noNav ||
           <Navbar></Navbar>

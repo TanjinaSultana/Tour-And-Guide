@@ -42,21 +42,22 @@ const Navbar = () => {
       .then(() =>{})
       .catch(err=>console.log(err))
     }
+    
     const navOptions = <>
    <NavLink to="/"  >
-    <li style={{color:"#202122"}}>Home</li>
+    <li style={{color:"#FFFFFF"}}>Home</li>
     </NavLink> 
    <NavLink to="/community"  >
-    <li style={{color:"#202122"}}><a>Community</a></li>
+    <li style={{color:"#FFFFFF"}}><a>Community</a></li>
     </NavLink> 
    <NavLink to="/blog" >
-    <li style={{color:"#202122"}}><a>Blogs</a></li>
+    <li style={{color:"#FFFFFF"}}><a>Blogs</a></li>
     </NavLink> 
    <NavLink to="/about">
-    <li style={{color:"#202122"}}><a>About Us</a></li>
+    <li style={{color:"#FFFFFF"}}><a>About Us</a></li>
     </NavLink> 
    <NavLink to="/contact">
-    <li style={{color:"#202122"}}><a>Contact Us</a></li>
+    <li style={{color:"#FFFFFF"}}><a>Contact Us</a></li>
     </NavLink> 
     {/* {
       user?
@@ -67,7 +68,7 @@ const Navbar = () => {
     } */}
    
 </>
-    const userOptions = <div style={{width:"150px"}}>
+    const userOptions = <div style={{width:"150px"}} >
     <h4>{user?.displayName}</h4>
     <h4 style={{marginTop:"-20px",marginBottom:"-2px",width:"100px"}}>{user?.email}</h4>
    <NavLink to="/dashboard">
@@ -83,8 +84,8 @@ const Navbar = () => {
    
 </div>
     return (
-        <div>
-          <AppBar  position="absolute" sx={{ background: 'transparent',position:'absolute',opacity:"60px",zIndex:"40px",boxShadow:"none"}}>
+        <div >
+          <AppBar  position="absolute" sx={{ background:"linear-gradient(to top, #202122, #6a2f41)",position:'absolute',opacity:"10px",zIndex:"40px",boxShadow:"none"}} className='bg-transparent' >
       <Container  >
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -105,7 +106,7 @@ const Navbar = () => {
           >
             {/* <img src='logo.png' style={{width:'150px', height:'70px',display:'block'}}></img> */}
             <br></br>
-            <h1 style={{fontSize:"40px",color:"#202122" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#6a2f41"}}>G</span>uide</h1>
+            <h1 style={{fontSize:"40px",color:"#FFFFFF" ,marginRight:"40px"}}>Tour<span style={{fontSize:"50px",color:"#FFFFFF",fontStyle:"italic"}}>G</span>uide</h1>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -162,7 +163,7 @@ const Navbar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+             
               textDecoration: 'none',
             }}
           >

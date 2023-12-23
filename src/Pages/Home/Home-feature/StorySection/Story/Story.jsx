@@ -11,13 +11,10 @@ const Story = () => {
     const storyItem = story.slice(0,4)
 
     return (
-        <div>
-            <SectionTitle
-            heading={"Story Section"}>
+        <div className=''>
+          <h1 className="font-bold flex justify-center mt-8 text-2xl ">Story Sections</h1>
 
-            </SectionTitle>
-
-        <div  className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8' style={{  gridGap: "20px" }}>
+        <div  className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mt-8' style={{  gridGap: "20px" }}>
             {
                 storyItem.map(item => <SingleStory
                     key={item._id}
